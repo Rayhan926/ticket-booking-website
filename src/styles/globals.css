@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  @apply font-poppins;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .title_lg {
+    @apply text-[40px] leading-[55px] font-bold text-primary;
+  }
+  .title_md {
+    @apply text-[25px] leading-[35px] font-medium text-primary;
+  }
+  .title_sm {
+    @apply text-lg font-medium text-primary;
+  }
+  .text_lg {
+    @apply text-xl font-normal text-dark;
+  }
+  .text_md {
+    @apply text-[15px] leading-[25px] font-normal text-dark-500;
+  }
+
+  .container {
+    @apply mx-auto px-5 2xl:max-w-[1400px];
+  }
+}
