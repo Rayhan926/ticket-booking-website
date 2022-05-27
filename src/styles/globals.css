@@ -65,6 +65,9 @@
   @apply bg-white text-dark;
   box-shadow: 0 0 4px 0px rgb(0, 0, 0, 0.1);
 }
+.white_header a {
+  @apply text-dark;
+}
 
 .tippy-popper {
   pointer-events: auto !important;
@@ -85,4 +88,31 @@
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   white-space: normal;
+}
+
+._svg_spinner {
+  animation: rotate 2s linear infinite;
+}
+
+._svg_spinner .path {
+  animation: dash 1.5s ease-in-out infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
 }

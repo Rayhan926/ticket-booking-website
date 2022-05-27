@@ -15,10 +15,12 @@ const HeaderTop = () => {
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-2">
           <FaRegEnvelope size={19} />
-          <a href="mailto:example@gmail.com">example@gmail.com</a>
+          <a href="mailto:example@gmail.com" className="hidden sm:inline-block">
+            example@gmail.com
+          </a>
         </div>
 
-        <div className="flex gap-10">
+        <div className="flex gap-2 xs:gap-5 sm:gap-10">
           <div
             onClick={() => setIsOpenLanguageDropdown((prev) => !prev)}
             className="flex items-center gap-2 select-none cursor-pointer relative"
@@ -27,7 +29,7 @@ const HeaderTop = () => {
             {selectedLanguage}
             <FiChevronDown />
             <div
-              className={`absolute top-[calc(100%+20px)] border-b-[3px] rounded-b-md border-primary left-0 w-full bg-white z-10 text-dark py-1 duration-200
+              className={`absolute z-[100] top-[calc(100%+20px)] border-b-[3px] rounded-b-md border-primary left-0 w-full bg-white text-dark py-1 duration-200
                   ${
                     isOpenLanguageDropdown
                       ? "opacity-100 pointer-events-auto translate-y-0"
@@ -51,7 +53,7 @@ const HeaderTop = () => {
             <Link href={"/login"}>
               <a className="flex items-center gap-2 mr-1.5 hover:text-primary">
                 <HiOutlineUserCircle size={24} className="text-primary" />
-                Login
+                <span className="hidden xs:inline-block">Login</span>
               </a>
             </Link>
             <Link href={"/login"}>

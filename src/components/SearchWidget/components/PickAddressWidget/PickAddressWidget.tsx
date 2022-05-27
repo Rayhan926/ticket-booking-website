@@ -4,6 +4,7 @@ import { Tooltip } from "react-tippy";
 import PlacesAutocomplete from "react-places-autocomplete";
 import { IoMdTrain } from "react-icons/io";
 import { PickAddressWidgetProps } from "@config/types";
+import CircularProgress from "@components/CircularProgress";
 
 const TooltipComponent = Tooltip as unknown as React.FC<any>;
 
@@ -62,6 +63,12 @@ const PickAddressWidget = ({ onSelect }: PickAddressWidgetProps) => {
               }, 100);
             }}
           />
+
+          {isLoading && (
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 text-primary">
+              <CircularProgress size={24} />
+            </div>
+          )}
         </div>
       </>
     );
@@ -74,7 +81,7 @@ const PickAddressWidget = ({ onSelect }: PickAddressWidgetProps) => {
 
   return (
     <TooltipComponent
-      open={isOpenDropdown || results.length > 0}
+      open={!isLoading && (isOpenDropdown || results.length > 0)}
       onRequestClose={() => setIsOpenDropdown(false)}
       html={
         <p>

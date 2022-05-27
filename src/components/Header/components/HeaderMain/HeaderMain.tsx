@@ -1,9 +1,13 @@
 import { headerNavLinks } from "@config/constants";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { FiMenu } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
 
 const HeaderMain = () => {
   const headerOffsetTop = useRef<any>(null!);
+  const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
+
   useEffect(() => {
     const headerMain: HTMLDivElement | null =
       document.querySelector("#headerMain");
@@ -23,7 +27,10 @@ const HeaderMain = () => {
         headerMain.classList.remove("fixed_header");
       }
 
-      if (window.scrollY > heroSection.clientHeight - headerMain.clientHeight) {
+      if (
+        window.scrollY >
+        heroSection.clientHeight - (headerMain.clientHeight + 180)
+      ) {
         headerMain.classList.add("white_header");
       } else {
         headerMain.classList.remove("white_header");
@@ -37,6 +44,12 @@ const HeaderMain = () => {
     };
   }, []);
 
+  const shouldCloseMobileNav = (e: any) => {
+    if (e.target.id === "mobileNavOverley") {
+      setIsOpenMobileNav(false);
+    }
+  };
+
   return (
     <div id="headerMain" className="duration-200">
       <div className="container flex justify-between items-center">
@@ -44,18 +57,38 @@ const HeaderMain = () => {
           <a className="text-[30px] font-extrabold">logo</a>
         </Link>
 
-        <div>
-          <ul className="flex items-center text-lg gap-10 font-medium">
+        <div
+          id="mobileNavOverley"
+          onClick={shouldCloseMobileNav}
+          className={`fixed top-0 left-0 w-full h-screen overflow-hidden bg-black/60 z-[50] md:bg-transparent md:static md:w-auto md:h-auto ${
+            isOpenMobileNav
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none delay-100"
+          } md:pointer-events-auto md:opacity-100 duration-200`}
+        >
+          <ul
+            style={{
+              transitionProperty: "transform",
+            }}
+            className={`flex flex-col items-start md:flex-row md:items-center text-lg gap-0 md:gap-10 font-medium bg-white md:bg-transparent w-[320px] h-full md:w-auto md:h-auto pt-6 md:pt-0
+            ${isOpenMobileNav ? "translate-x-0 delay-100" : "-translate-x-full"}
+            md:translate-x-0 duration-200
+            `}
+          >
             {headerNavLinks.map(({ url, text }, i) => (
               <li key={i}>
                 <Link href={url}>
-                  <a className="hover:text-primary duration-150 py-5 block">
+                  <a className="hover:text-primary duration-150 py-2.5 md:py-5 block text-dark md:text-white px-6 md:px-0">
                     {text}
                   </a>
                 </Link>
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="md:hidden" onClick={() => setIsOpenMobileNav(true)}>
+          {isOpenMobileNav ? <IoClose size={30} /> : <FiMenu size={30} />}
         </div>
       </div>
     </div>
