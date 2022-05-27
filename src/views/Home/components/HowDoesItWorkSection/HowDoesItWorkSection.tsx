@@ -12,12 +12,12 @@ const HowDoesItWorkSection = () => {
           title="How Does It Work"
           subtitle="Lets Know How To Book A Car From Our Website"
         />
-        <div className="grid grid-cols-4 gap-[30px] mt-[85px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-[85px]">
           {howDoesItWorkCards.map((howDoesItWorkCard, i) => (
             <IconCard {...howDoesItWorkCard} key={i} />
           ))}
 
-          <div className="flex flex-col items-center justify-center bg-primary text-center rounded-[7px] text-white">
+          <div className="flex flex-col items-center justify-center bg-primary text-center rounded-[7px] text-white py-16">
             <Image
               src={"/img/white_check.svg"}
               alt="Done"

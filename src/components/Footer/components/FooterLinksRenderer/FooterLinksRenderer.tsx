@@ -14,7 +14,7 @@ const FooterLinksRenderer = ({
       <h6 className="title_sm text-[22px] mb-2.5 text-white font-semibold">
         {section_title}
       </h6>
-      <ul className="text_md space-y-[3px]">
+      <ul className="text_md space-y-1">
         {links.map((link, i) => (
           <li key={i}>
             <Link href={link.url}>

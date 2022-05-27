@@ -2,7 +2,7 @@ import React from "react";
 
 const ComapnyLogoSection = () => {
   return (
-    <section>
+    <section className="bg-dark-900 pt-14">
       <div className="container">
         <h2 className="title_md text-dark text-center md:max-w-[690px] mx-auto mb-14">
           Secure, Trusted And Integrated Payment Processing Using Leading
@@ -13,9 +13,9 @@ const ComapnyLogoSection = () => {
         style={{
           boxShadow: "0 8px 19px rgba(0,0,0,0.1)",
         }}
-        className="max-w-[1600px] rounded-[12px] flex items-center justify-center mx-auto min-h-[170px] -mb-[85px]"
+        className="py-10 w-[92%] max-w-[1600px] rounded-[12px] flex items-center justify-center mx-auto min-h-[170px] -mb-[80px] bg-white relative z-[5s]"
       >
-        <div className="flex items-center justify-center w-full gap-[110px] translate-y-4">
+        <div className="flex flex-wrap px-5 items-center justify-center w-full gap-[50px] lg:gap-[110px]">
           <img src="/img/Visa.svg" alt="Visa" />
           <img src="/img/MasterCard.svg" alt="MasterCard" />
           <img src="/img/Stripe.svg" alt="Stripe" />

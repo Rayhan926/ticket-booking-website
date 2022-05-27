@@ -9,7 +9,7 @@
 
 @layer components {
   .title_lg {
-    @apply text-[40px] leading-[55px] font-bold text-primary;
+    @apply text-[30px] leading-[45px] md:text-[40px] md:leading-[55px] font-bold text-primary;
   }
   .title_md {
     @apply text-[25px] leading-[35px] font-medium text-primary;
@@ -18,7 +18,7 @@
     @apply text-lg font-medium text-primary;
   }
   .text_lg {
-    @apply text-xl font-normal text-dark;
+    @apply text-base md:text-xl font-normal text-dark;
   }
   .text_md {
     @apply text-[15px] leading-[25px] font-normal text-dark-500;
@@ -32,4 +32,57 @@
 #we_have_section {
   background: url("/img/we_have_bg.jpg") no-repeat center;
   background-size: cover;
+}
+
+.client_review_slider .navigation_prev,
+.client_review_slider .navigation_next {
+  @apply absolute top-1/2 -translate-y-1/2 text-white disabled:!opacity-50 z-[5];
+}
+.client_review_slider .navigation_prev.swiper-button-disabled,
+.client_review_slider .navigation_next.swiper-button-disabled {
+  @apply opacity-50;
+}
+
+.car_categories_slider .navigation_prev,
+.car_categories_slider .navigation_next {
+  @apply absolute top-1/2 -translate-y-1/2 text-primary disabled:text-[#C9C9C9] z-[5];
+}
+
+.car_categories_slider .navigation_prev.swiper-button-disabled,
+.car_categories_slider .navigation_next.swiper-button-disabled {
+  @apply text-[#C9C9C9];
+}
+
+.car_categories_slider .swiper-slide-active + div .car_category_card {
+  @apply !scale-100 !bg-white;
+  box-shadow: 0 16px 44px rgba(84, 84, 84, 0.09) !important;
+}
+
+.fixed_header {
+  @apply fixed top-0 left-0 w-full z-[999999999];
+}
+.white_header {
+  @apply bg-white text-dark;
+  box-shadow: 0 0 4px 0px rgb(0, 0, 0, 0.1);
+}
+
+.tippy-popper {
+  pointer-events: auto !important;
+  width: 300px;
+}
+.tippy-tooltip {
+  background-color: #fff !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.line_clam_1 {
+  overflow: hidden;
+  display: block;
+  -webkit-line-clamp: 1;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
 }

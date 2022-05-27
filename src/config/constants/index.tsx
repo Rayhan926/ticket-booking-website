@@ -1,4 +1,27 @@
-import { FooterLinksSectionsType, IconCardType } from "@config/types";
+import type {
+  FooterLinksSectionsType,
+  HeaderNavLink,
+  IconCardType,
+} from "@config/types";
+
+export const headerNavLinks: HeaderNavLink[] = [
+  {
+    text: "Home",
+    url: "#",
+  },
+  {
+    text: "Airport Taxi",
+    url: "#",
+  },
+  {
+    text: "City Rides",
+    url: "#",
+  },
+  {
+    text: "Help",
+    url: "#",
+  },
+];
 
 export const safeJourneyCards: IconCardType[] = [
   {
@@ -257,3 +280,5 @@ export const footerLinksSections: FooterLinksSectionsType = {
     ],
   },
 };
+
+export const languages = ["ENGLISH", "ITALIC", "GERMAN", "SPANISH"];

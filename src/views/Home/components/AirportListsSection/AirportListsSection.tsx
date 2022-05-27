@@ -10,9 +10,10 @@ const AirportListsSection = () => {
           Worldwide
         </h2>
 
-        <div className="mt-[70px] grid grid-cols-3 gap-[60px]">
+        <div className="mt-[70px] grid grid-cols-1 xl:grid-cols-3 gap-[60px]">
           {airplaneListsCards.map(({ boxBg, lists }, i) => (
             <div
+              key={i}
               style={{
                 background: boxBg,
                 boxShadow: "10px 15px 20px rgba(0,0,0,0.1)",

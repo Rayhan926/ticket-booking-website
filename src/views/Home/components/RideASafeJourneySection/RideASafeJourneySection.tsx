@@ -11,7 +11,7 @@ const RideASafeJourneySection = () => {
           title="Ride A Safe Journey"
           subtitle="Our car booking company is very proffestional and secure agency"
         />
-        <div className="grid grid-cols-4 gap-[30px] mt-[85px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[30px] mt-[85px]">
           {safeJourneyCards.map((safeJourneyCard, i) => (
             <IconCard {...safeJourneyCard} key={i} />
           ))}

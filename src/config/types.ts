@@ -26,3 +26,12 @@ export interface FooterLinksSection {
 export interface FooterLinksSectionsType {
   [key: string]: FooterLinksSection;
 }
+
+export interface HeaderNavLink {
+  text: ReactNode;
+  url: string;
+}
+
+export interface PickAddressWidgetProps {
+  onSelect?: (value: any) => void;
+}
