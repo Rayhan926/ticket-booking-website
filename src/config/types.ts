@@ -15,3 +15,14 @@ export interface IconCardType {
   title: ReactNode;
   subtitle: ReactNode;
 }
+
+export interface FooterLinksSection {
+  section_title: ReactNode;
+  links: {
+    text: ReactNode;
+    url: string;
+  }[];
+}
+export interface FooterLinksSectionsType {
+  [key: string]: FooterLinksSection;
+}

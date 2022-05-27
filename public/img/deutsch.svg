@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="11" viewBox="0 0 19 11">
+  <defs>
+    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 119 71">
+      <image width="119" height="71" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAABHCAMAAAAKnSgVAAAAFVBMVEUAAAD/zgDdAABwAADkAAD0qQD/0QCPnNFCAAAAPUlEQVRoge3NAQ3AIAADsB04/iUjY4G0BpoAAMCFZkdWR0aH1+v1er1er/eR9+/I7sjX4fV6vV6v1+t94z0ijScNBM8InAAAAABJRU5ErkJggg=="/>
+    </pattern>
+  </defs>
+  <rect id="download_2_" data-name="download (2)" width="19" height="11" fill="url(#pattern)"/>
+</svg>
