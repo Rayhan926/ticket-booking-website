@@ -13,9 +13,12 @@ const HeaderTop = () => {
   return (
     <div className="border-b border-white py-5">
       <div className="container flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <FaRegEnvelope size={19} />
-          <a href="mailto:example@gmail.com" className="hidden sm:inline-block">
+        <div>
+          <a
+            href="mailto:example@gmail.com"
+            className="hidden sm:flex items-center gap-2 hover:text-primary"
+          >
+            <FaRegEnvelope size={19} />
             example@gmail.com
           </a>
         </div>

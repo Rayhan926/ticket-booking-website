@@ -51,7 +51,7 @@ const HeaderMain = () => {
   };
 
   return (
-    <div id="headerMain" className="duration-200">
+    <div id="headerMain" className="duration-200 py-2.5 md:py-0">
       <div className="container flex justify-between items-center">
         <Link href={"/"}>
           <a className="text-[30px] font-extrabold">logo</a>
@@ -64,7 +64,7 @@ const HeaderMain = () => {
             isOpenMobileNav
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none delay-100"
-          } md:pointer-events-auto md:opacity-100 duration-200`}
+          } md:pointer-events-auto md:opacity-100 duration-200 shrink-0`}
         >
           <ul
             style={{

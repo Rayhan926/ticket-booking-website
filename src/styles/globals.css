@@ -53,9 +53,19 @@
   @apply text-[#C9C9C9];
 }
 
-.car_categories_slider .swiper-slide-active + div .car_category_card {
+.car_categories_slider .swiper-slide-active .car_category_card {
   @apply !scale-100 !bg-white;
   box-shadow: 0 16px 44px rgba(84, 84, 84, 0.09) !important;
+}
+@media screen and (min-width: 1000px) {
+  .car_categories_slider .swiper-slide-active .car_category_card {
+    box-shadow: 0 3px 11px rgba(0, 0, 0, 0.05) !important;
+    @apply !scale-[0.85] !bg-dark-700;
+  }
+  .car_categories_slider .swiper-slide-active + div .car_category_card {
+    @apply !scale-100 !bg-white;
+    box-shadow: 0 16px 44px rgba(84, 84, 84, 0.09) !important;
+  }
 }
 
 .fixed_header {
