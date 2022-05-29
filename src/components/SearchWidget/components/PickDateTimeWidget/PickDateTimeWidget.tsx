@@ -33,7 +33,7 @@ const PickDateTimeWidget = ({
 
   return (
     <>
-      <div className="relative">
+      <div className="relative w-full">
         {!isEverythingNull && isClearable && (
           <div
             onClick={clearValue}
@@ -51,7 +51,7 @@ const PickDateTimeWidget = ({
 
         <div
           id={id}
-          className="w-full h-full bg-dark-400 rounded-[5px] cursor-pointer flex flex-col justify-center px-5"
+          className="w-full h-full bg-dark-400 rounded-[5px] cursor-pointer flex flex-col justify-center px-3.5 md:px-5 min-h-[96px]"
         >
           <div
             className={`flex items-center gap-2 text-dark-300 capitalize font-medium first-letter:

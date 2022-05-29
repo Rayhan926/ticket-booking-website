@@ -34,7 +34,7 @@ const PassengersWidget = () => {
         <p className="text-dark-300 mt-3.5 text-lg font-medium">{totalSum}</p>
       </div>
       <div
-        className={`absolute top-[calc(100%+10px)] right-0 min-w-[280px] bg-white shadow rounded duration-150 ${
+        className={`absolute top-[calc(100%+10px)] left-0 w-full lg:max-w-[250px] xl:right-0 xl:left-auto min-w-[280px] bg-white shadow rounded duration-150 ${
           isOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none translate-y-5"

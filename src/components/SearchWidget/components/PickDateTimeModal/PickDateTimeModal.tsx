@@ -70,12 +70,25 @@ const PickDateTimeModal = ({
 
     targetElm.addEventListener("click", (e) => {
       const rect = targetElm.getBoundingClientRect();
-      setPosition((prev) => ({
-        ...prev,
-        top: rect.top,
-        left: rect.left,
-        width: rect.width,
-      }));
+      const windowSize = window.innerWidth;
+      if (windowSize < 1000) {
+        setPosition((prev) => ({
+          ...prev,
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }));
+      } else {
+        setPosition((prev) => ({
+          ...prev,
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: "auto",
+        }));
+      }
+
       openModalHandler();
     });
   }, [targetElmId]);
@@ -105,7 +118,7 @@ const PickDateTimeModal = ({
         }`}
     >
       <div
-        className="px-1 pb-2 border border-dark-500/70 bg-white drop-shadow-md absolute datePickerWrapper"
+        className="px-1 pb-2 border border-dark-500/70 bg-white drop-shadow-md absolute datePickerWrapper w-full h-full"
         style={{
           ...position,
           ...(isOpenModal

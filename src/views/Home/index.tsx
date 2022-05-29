@@ -18,13 +18,13 @@ const Home = () => {
       <HeroSection />
       <SearchWidget />
       <RideASafeJourneySection />
-      <OurCarCategorysSection />
+      {/* <OurCarCategorysSection />
       <HowDoesItWorkSection />
       <WeHaveSection />
       <ClientTestimonialSection />
       <AirportListsSection />
       <ComapnyLogoSection />
-      <Footer />
+      <Footer /> */}
     </>
   );
 };

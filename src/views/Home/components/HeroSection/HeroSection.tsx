@@ -4,16 +4,16 @@ import React from "react";
 const HeroSection = () => {
   return (
     <section
-      className="h-screen lg:h-auto lg:min-h-screen relative"
+      className="h-screen 2xl:h-auto 2xl:min-h-screen relative"
       id="heroSection"
     >
       <img
         src="/img/hero_image.jpg"
-        className="w-full h-full lg:h-auto object-cover"
+        className="w-full h-full 2xl:h-auto object-cover"
         alt="Reliable Airport Transfers"
       />
 
-      <div className="absolute top-[280px] w-full flex flex-col items-center text-center text-white">
+      <div className="absolute top-[230px] lg:top-[280px] w-full flex flex-col items-center text-center text-white">
         <p className="text-2xl lg:text-[40px] mb-3 lg:mb-5">
           We Are Here To Give You A
         </p>
@@ -27,7 +27,7 @@ const HeroSection = () => {
           nec, fermentum aliquam orci. Quisque ornare iaculis placerat. Class
           aptent
         </p>
-        <div className="flex flex-col items-center gap-2.5 mt-[95px] cursor-pointer">
+        <div className="flex flex-col items-center gap-2.5 mt-[60px] lg:mt-[95px] cursor-pointer">
           <Image
             src={"/img/scroll_down_icon.svg"}
             width={62}
