@@ -1,7 +1,8 @@
 import { PickDateTimeValue } from "@config/types";
 import React, { useState } from "react";
-import PickAddressWidget from "./components/PickAddressWidget";
-import PickDateWidget from "./components/PickDateTimeWidget";
+import PassengersWidget from "@components/SearchWidget/components/PassengersWidget";
+import PickAddressWidget from "@components/SearchWidget/components/PickAddressWidget";
+import PickDateWidget from "@components/SearchWidget/components/PickDateTimeWidget";
 
 const SearchWidget = () => {
   const [pickDateAndTime, setPickDateAndTime] = useState<PickDateTimeValue>({
@@ -48,6 +49,7 @@ const SearchWidget = () => {
           id="returnDate"
           pickupTimeTitle="Pickup time return"
         />
+        <PassengersWidget />
       </div>
     </section>
   );

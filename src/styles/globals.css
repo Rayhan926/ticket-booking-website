@@ -92,6 +92,9 @@ body {
   padding: 0 !important;
   text-align: left !important;
 }
+.tippy-popper .tippy-tooltip.light-theme {
+  @apply !shadow-md !shadow-slate-100;
+}
 
 .line_clam_1 {
   overflow: hidden;

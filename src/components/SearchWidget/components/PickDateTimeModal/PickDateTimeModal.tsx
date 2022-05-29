@@ -1,3 +1,4 @@
+import Button from "@components/Button";
 import { hoursOptions, minutesOptions } from "@config/constants";
 import { PickDateTimeModalProps, PickDateTimeValue } from "@config/types";
 import React, { useEffect, useState } from "react";
@@ -164,12 +165,7 @@ const PickDateTimeModal = ({
           </div>
 
           <div className="mt-5 px-1">
-            <button
-              onClick={closeModalHandler}
-              className="w-full px-5 py-3 bg-primary hover:bg-primary-hover duration-150 text-white font-semibold rounded-md uppercase"
-            >
-              Confirm
-            </button>
+            <Button onClick={closeModalHandler}>Confirm</Button>
           </div>
         </div>
       </div>

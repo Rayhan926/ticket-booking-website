@@ -59,3 +59,12 @@ export interface PickDateTimeWidgetProps {
   id: string;
   pickupTimeTitle?: ReactNode;
 }
+
+export interface IncrementDecrement {
+  title: ReactNode;
+  subtitle: ReactNode;
+  value: number;
+  onChange: (prev: any) => void;
+  min?: number;
+  max?: number;
+}
