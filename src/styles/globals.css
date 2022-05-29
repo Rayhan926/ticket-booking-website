@@ -3,6 +3,10 @@
 * {
   @apply font-poppins;
 }
+
+body {
+  overflow-y: overlay;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -125,4 +129,44 @@
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;
   }
+}
+
+.datePickerWrapper {
+  transition-property: transform, opacity, max-height, border-width;
+  transition-timing-function: ease-out, ease-out, ease, ease;
+  transition-duration: 0.15s, 0.15s, 0s, 0s;
+}
+.datePickerWrapper .rdrMonth,
+.datePickerWrapper .rdrMonthAndYearWrapper {
+  @apply w-full pt-0;
+}
+
+.datePickerWrapper .rdrDateDisplayWrapper {
+  @apply hidden;
+}
+
+.datePickerWrapper .rdrCalendarWrapper {
+  @apply w-full;
+}
+
+.datePickerWrapper .rdrDayDisabled {
+  background: #f5f5f5;
+}
+.datePickerWrapper .rdrSelected {
+  @apply !text-primary border-none;
+}
+.datePickerWrapper .rdrDayNumber > span::after {
+  @apply !hidden !border-none;
+}
+
+.datePickerWrapper
+  .rdrCalendarWrapper:not(.rdrDateRangeWrapper)
+  .rdrDayHovered
+  .rdrDayNumber:after {
+  display: none !important;
+}
+
+.datePickerWrapper .rdrDayNumber {
+  z-index: 2;
+  /* color: #45acd1; */
 }

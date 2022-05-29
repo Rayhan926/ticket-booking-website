@@ -3,7 +3,10 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="h-screen lg:min-h-screen relative" id="heroSection">
+    <section
+      className="h-screen lg:h-auto lg:min-h-screen relative"
+      id="heroSection"
+    >
       <img
         src="/img/hero_image.jpg"
         className="w-full h-full lg:h-auto object-cover"

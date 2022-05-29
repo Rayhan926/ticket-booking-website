@@ -35,3 +35,27 @@ export interface HeaderNavLink {
 export interface PickAddressWidgetProps {
   onSelect?: (value: any) => void;
 }
+
+export interface PickDateTimeValue {
+  date: Date | null;
+  time: {
+    hour: string | null;
+    minute: string | null;
+  };
+}
+export interface PickDateTimeModalProps {
+  targetElmId: string;
+  value: PickDateTimeValue;
+  setValue: (e: PickDateTimeValue) => void;
+  pickupTimeTitle?: ReactNode;
+}
+
+export interface PickDateTimeWidgetProps {
+  value: PickDateTimeValue;
+  setValue: (e: PickDateTimeValue) => void;
+  isClearable?: boolean;
+  isOptional?: boolean;
+  widgetTitle: ReactNode;
+  id: string;
+  pickupTimeTitle?: ReactNode;
+}
