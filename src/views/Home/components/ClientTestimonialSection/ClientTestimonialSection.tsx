@@ -3,6 +3,7 @@ import ClientReviewCard from "@views/Home/components/ClientTestimonialSection/co
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HiArrowNarrowRight, HiArrowNarrowLeft } from "react-icons/hi";
 import { Navigation } from "swiper";
+import { clientReviews } from "@config/constants";
 
 const ClientTestimonialSection = () => {
   return (
@@ -45,12 +46,13 @@ const ClientTestimonialSection = () => {
               },
               1000: {
                 slidesPerView: 3,
+                spaceBetween: 30,
               },
             }}
           >
-            {[...new Array(6).keys()].map((e) => (
-              <SwiperSlide key={e}>
-                <ClientReviewCard />
+            {clientReviews.map((clientReview, i) => (
+              <SwiperSlide key={i}>
+                <ClientReviewCard {...clientReview} />
               </SwiperSlide>
             ))}
           </Swiper>

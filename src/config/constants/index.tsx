@@ -1,4 +1,5 @@
 import type {
+  ClientReviewType,
   FooterLinksSectionsType,
   HeaderNavLink,
   IconCardType,
@@ -446,3 +447,147 @@ export const placesKeyword = {
   railway: ["train", "railway", "rail"],
   hotels: ["hotel", "hotels"],
 };
+
+export const carsCategories: IconCardType[] = [
+  {
+    img: {
+      src: "/img/Van-First-Class.png",
+      width: 900,
+      height: 604,
+      alt: "Van First Class",
+    },
+    title: "Van First Class",
+    subtitle: "Up To 6 Passengers",
+  },
+  {
+    img: {
+      src: "/img/Economy_Taxi.png",
+      width: 900,
+      height: 604,
+      alt: "Economy Taxi",
+    },
+    title: "Economy Taxi",
+    subtitle: "Up To 3 Passengers",
+  },
+  {
+    img: {
+      src: "/img/Van-First-Class-2.png",
+      width: 900,
+      height: 604,
+      alt: "Van First Class",
+    },
+    title: "Van First Class",
+    subtitle: "Up To 6 Passengers",
+  },
+  {
+    img: {
+      src: "/img/Van-First-Class.png",
+      width: 900,
+      height: 604,
+      alt: "Van First Class",
+    },
+    title: "Van First Class",
+    subtitle: "Up To 6 Passengers",
+  },
+  {
+    img: {
+      src: "/img/Economy_Taxi.png",
+      width: 900,
+      height: 604,
+      alt: "Economy Taxi",
+    },
+    title: "Economy Taxi",
+    subtitle: "Up To 3 Passengers",
+  },
+  {
+    img: {
+      src: "/img/Van-First-Class-2.png",
+      width: 900,
+      height: 604,
+      alt: "Van First Class",
+    },
+    title: "Van First Class",
+    subtitle: "Up To 6 Passengers",
+  },
+];
+
+export const clientReviews: ClientReviewType[] = [
+  {
+    reviewText:
+      "Some days a motivational quote can provide a quick pick-me-up for employees and even management. They can be a breath of fresh air when it comes to a drab afternoon.",
+    img: {
+      src: "/img/profile.jpg",
+      width: 58,
+      height: 58,
+      alt: "Patrick Bell",
+    },
+    name: "Patrick Bell",
+    stars: 5,
+    rating: 5.0,
+  },
+  {
+    reviewText:
+      "Some days a motivational quote can provide a quick pick-me-up for employees and even management. They can be a breath of fresh air when it comes to a drab afternoon.",
+    img: {
+      src: "/img/profile-2.png",
+      width: 58,
+      height: 58,
+      alt: "Patrick Bell",
+    },
+    name: "Patrick Bell",
+    stars: 5,
+    rating: 5.0,
+  },
+  {
+    reviewText:
+      "Some days a motivational quote can provide a quick pick-me-up for employees and even management. They can be a breath of fresh air when it comes to a drab afternoon.",
+    img: {
+      src: "/img/profile-3.png",
+      width: 58,
+      height: 58,
+      alt: "Patrick Bell",
+    },
+    name: "Patrick Bell",
+    stars: 5,
+    rating: 5.0,
+  },
+  {
+    reviewText:
+      "Some days a motivational quote can provide a quick pick-me-up for employees and even management. They can be a breath of fresh air when it comes to a drab afternoon.",
+    img: {
+      src: "/img/profile.jpg",
+      width: 58,
+      height: 58,
+      alt: "Patrick Bell",
+    },
+    name: "Patrick Bell",
+    stars: 5,
+    rating: 5.0,
+  },
+  {
+    reviewText:
+      "Some days a motivational quote can provide a quick pick-me-up for employees and even management. They can be a breath of fresh air when it comes to a drab afternoon.",
+    img: {
+      src: "/img/profile-2.png",
+      width: 58,
+      height: 58,
+      alt: "Patrick Bell",
+    },
+    name: "Patrick Bell",
+    stars: 5,
+    rating: 5.0,
+  },
+  {
+    reviewText:
+      "Some days a motivational quote can provide a quick pick-me-up for employees and even management. They can be a breath of fresh air when it comes to a drab afternoon.",
+    img: {
+      src: "/img/profile-3.png",
+      width: 58,
+      height: 58,
+      alt: "Patrick Bell",
+    },
+    name: "Patrick Bell",
+    stars: 5,
+    rating: 5.0,
+  },
+];

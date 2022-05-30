@@ -15,7 +15,7 @@ const ComapnyLogoSection = () => {
         }}
         className="py-10 w-[92%] max-w-[1600px] rounded-[12px] flex items-center justify-center mx-auto min-h-[170px] -mb-[80px] bg-white relative z-[5]"
       >
-        <div className="flex flex-wrap px-5 items-center justify-center w-full gap-[50px] lg:gap-[110px]">
+        <div className="flex flex-col sm:flex-row flex-wrap px-5 items-center justify-center w-full gap-[50px] lg:gap-[110px]">
           <img src="/img/Visa.svg" alt="Visa" />
           <img src="/img/MasterCard.svg" alt="MasterCard" />
           <img src="/img/Stripe.svg" alt="Stripe" />

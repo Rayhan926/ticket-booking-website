@@ -107,7 +107,7 @@ const PickDateTimeModal = ({
       if (!targetElm || !isOpenModal) return;
       setModalContentPosition(targetElm);
     });
-  }, [isOpenModal]);
+  }, [isOpenModal, targetElmId]);
 
   useEffect(() => {
     const shouldCloseModal = (e: any) => {

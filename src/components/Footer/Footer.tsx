@@ -2,6 +2,7 @@ import React from "react";
 import FooterLinksRenderer from "@components/Footer/components/FooterLinksRenderer";
 import { footerLinksSections } from "@config/constants";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -24,12 +25,22 @@ const Footer = () => {
             <div className="flex flex-wrap gap-2 flex-row sm:flex-col">
               <Link href={"#"}>
                 <a className="inline-block">
-                  <img src="/img/google_playstore.svg" alt="Google Playstore" />
+                  <Image
+                    width={178}
+                    height={153}
+                    src="/img/google_playstore.svg"
+                    alt="Google Playstore"
+                  />
                 </a>
               </Link>
               <Link href={"#"}>
                 <a className="inline-block">
-                  <img src="/img/app_store.svg" alt="App Store" />
+                  <Image
+                    width={178}
+                    height={153}
+                    src="/img/app_store.svg"
+                    alt="App Store"
+                  />
                 </a>
               </Link>
             </div>

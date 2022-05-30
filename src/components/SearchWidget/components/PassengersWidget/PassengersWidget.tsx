@@ -1,14 +1,10 @@
 import Button from "@components/Button";
+import { PassengersWidget } from "@config/types";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { BiPlus, BiMinus } from "react-icons/bi";
 import IncrementDecrement from "./components/IncrementDecrement";
 
-const PassengersWidget = () => {
-  const [passangers, setPassangers] = useState({
-    adults: 2,
-    children: 0,
-    infantsCount: 0,
-  });
+const PassengersWidget = ({ passangers, setPassangers }: PassengersWidget) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const totalSum = Object.values(passangers).reduce((a, b) => {
@@ -16,10 +12,10 @@ const PassengersWidget = () => {
   });
 
   const onChangeHandler = (value: number, key: string) => {
-    setPassangers((prev) => ({
-      ...prev,
+    setPassangers({
+      ...passangers,
       [key]: value,
-    }));
+    });
   };
 
   useEffect(() => {
@@ -52,7 +48,12 @@ const PassengersWidget = () => {
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <div className="flex items-center gap-2 text-dark-300">
-            <img src="/img/passengers.svg" alt="passengers" />
+            <Image
+              width={30}
+              height={20}
+              src="/img/passengers.svg"
+              alt="passengers"
+            />
             <p className="md:hidden">Passengers</p>
           </div>
           <p className="text-dark-300 mt-3.5 text-lg font-medium">{totalSum}</p>

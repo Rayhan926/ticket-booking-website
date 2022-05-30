@@ -10,7 +10,7 @@ const IconCard = ({ img, title, subtitle }: IconCardType) => {
       }}
       className="bg-white flex flex-col items-center gap-5 pt-[30px] pb-[50px] px-[30px] rounded-[7px] text-center"
     >
-      <Image {...img} />
+      <Image {...img} alt={""} />
       <h4 className="title_sm">{title}</h4>
       <h4 className="text_md">{subtitle}</h4>
     </div>

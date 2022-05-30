@@ -1,34 +1,21 @@
-import { PickDateTimeValue } from "@config/types";
-import React, { useState } from "react";
+import React from "react";
 import PassengersWidget from "@components/SearchWidget/components/PassengersWidget";
 import PickAddressWidget from "@components/SearchWidget/components/PickAddressWidget";
 import PickDateTimeWidget from "@components/SearchWidget/components/PickDateTimeWidget";
 import { FiSearch } from "react-icons/fi";
 import { useAppDispatch, useAppSelector } from "@state/hooks";
-import { setPickDateTime, setReturnDateTime } from "@state/search/searchSlice";
+import {
+  setAddress1,
+  setAddress2,
+  setPassengers,
+  setPickDateTime,
+  setReturnDateTime,
+} from "@state/search/searchSlice";
 
 const SearchWidget = () => {
-  // const [pickDateAndTime, setPickDateAndTime] = useState<PickDateTimeValue>({
-  //   date: null,
-  //   time: {
-  //     hour: "13",
-  //     minute: "00",
-  //   },
-  // });
-  // const [addReturnDateTime, setAddReturnDateTime] = useState<PickDateTimeValue>(
-  //   {
-  //     date: null,
-  //     time: {
-  //       hour: "13",
-  //       minute: "00",
-  //     },
-  //   },
-  // );
-
   const dispatch = useAppDispatch();
-  const { pickDateTime, returnDateTime } = useAppSelector(
-    (state) => state.search,
-  );
+  const { pickDateTime, returnDateTime, passengers, address1, address2 } =
+    useAppSelector((state) => state.search);
 
   return (
     <section
@@ -43,8 +30,14 @@ const SearchWidget = () => {
           }}
         >
           <div className="grid grid-cols-1 xl:grid-cols-[300px,300px,360px,auto,auto] gap-2.5">
-            <PickAddressWidget onSelect={(value) => console.log({ value })} />
-            <PickAddressWidget onSelect={(value) => console.log({ value })} />
+            <PickAddressWidget
+              value={address1}
+              onSelect={(value) => dispatch(setAddress1(value))}
+            />
+            <PickAddressWidget
+              value={address2}
+              onSelect={(value) => dispatch(setAddress2(value))}
+            />
             <div className="flex gap-2.5 flex-row justify-between">
               <PickDateTimeWidget
                 value={pickDateTime}
@@ -52,20 +45,29 @@ const SearchWidget = () => {
                 widgetTitle="Pickup Date"
                 id="pickDate"
               />
-              <PickDateTimeWidget
-                value={returnDateTime}
-                setValue={(val) => dispatch(setReturnDateTime(val))}
-                isClearable
-                isOptional
-                widgetTitle="Add a Return"
-                id="returnDate"
-                pickupTimeTitle="Pickup time return"
-                minDate={pickDateTime.date || new Date()}
-                minHour={pickDateTime.time.hour}
-                minMinute={pickDateTime.time.minute}
-              />
+              <div
+                className={`${
+                  !pickDateTime.date ? "pointer-events-none opacity-70" : ""
+                } w-full`}
+              >
+                <PickDateTimeWidget
+                  value={returnDateTime}
+                  setValue={(val) => dispatch(setReturnDateTime(val))}
+                  isClearable
+                  isOptional
+                  widgetTitle="Add a Return"
+                  id="returnDate"
+                  pickupTimeTitle="Pickup time return"
+                  minDate={pickDateTime.date || new Date()}
+                  minHour={pickDateTime.time.hour}
+                  minMinute={pickDateTime.time.minute}
+                />
+              </div>
             </div>
-            <PassengersWidget />
+            <PassengersWidget
+              passangers={passengers}
+              setPassangers={(e) => dispatch(setPassengers(e))}
+            />
             <button className="h-full rounded-[5px] bg-primary flex items-center justify-center text-white hover:bg-primary-hover duration-150 gap-3 font-medium uppercase text-lg min-h-[96px]">
               <FiSearch size={24} />
               Search

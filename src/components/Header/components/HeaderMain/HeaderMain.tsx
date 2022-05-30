@@ -63,7 +63,7 @@ const HeaderMain = () => {
         <div
           id="mobileNavOverley"
           onClick={shouldCloseMobileNav}
-          className={`fixed top-0 left-0 w-full h-screen overflow-hidden bg-black/60 z-[50] md:bg-transparent md:static md:w-auto md:h-auto ${
+          className={`fixed top-0 left-0 w-full h-screen overflow-hidden bg-black/40 z-[50] md:bg-transparent md:static md:w-auto md:h-auto ${
             isOpenMobileNav
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none delay-100"
@@ -73,7 +73,7 @@ const HeaderMain = () => {
             style={{
               transitionProperty: "transform",
             }}
-            className={`flex flex-col items-start md:flex-row md:items-center text-lg gap-0 md:gap-10 font-medium bg-white md:bg-transparent w-[320px] h-full md:w-auto md:h-auto pt-6 md:pt-0
+            className={`flex flex-col items-start md:flex-row md:items-center text-lg gap-0 md:gap-10 font-medium bg-white border-r-4 border-primary md:bg-transparent w-[320px] h-full md:border-r-0 md:w-auto md:h-auto pt-6 md:pt-0
             ${isOpenMobileNav ? "translate-x-0 delay-100" : "-translate-x-full"}
             md:translate-x-0 duration-200
             `}

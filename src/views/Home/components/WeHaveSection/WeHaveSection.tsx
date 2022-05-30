@@ -1,7 +1,7 @@
 import { weHaveStats } from "@config/constants";
 import React from "react";
 
-export const WeHaveSection = () => {
+const WeHaveSection = () => {
   return (
     <section className="py-[90px] w-full" id="we_have_section">
       <div className="container">
@@ -28,3 +28,5 @@ export const WeHaveSection = () => {
     </section>
   );
 };
+
+export default WeHaveSection;

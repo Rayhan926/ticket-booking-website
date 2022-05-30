@@ -33,7 +33,8 @@ export interface HeaderNavLink {
 }
 
 export interface PickAddressWidgetProps {
-  onSelect?: (value: any) => void;
+  onSelect: (value: any) => void;
+  value: {} | null;
 }
 
 export interface PickDateTimeValue {
@@ -73,4 +74,27 @@ export interface IncrementDecrement {
   onChange: (prev: any) => void;
   min?: number;
   max?: number;
+}
+
+type PassengerType = {
+  adults: number;
+  children: number;
+  infantsCount: number;
+};
+export interface PassengersWidget {
+  passangers: PassengerType;
+  setPassangers: (e: any) => void;
+}
+
+export interface ClientReviewType {
+  reviewText: string;
+  img: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
+  name: string;
+  stars: number;
+  rating: number;
 }

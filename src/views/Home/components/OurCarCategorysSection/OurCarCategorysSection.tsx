@@ -4,6 +4,7 @@ import { IoMdArrowRoundBack, IoMdArrowRoundForward } from "react-icons/io";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CarCategoryCard from "@views/Home/components/OurCarCategorysSection/components/CarCategoryCard";
+import { carsCategories } from "@config/constants";
 
 const OurCarCategorysSection = () => {
   return (
@@ -31,7 +32,7 @@ const OurCarCategorysSection = () => {
             }}
             breakpoints={{
               0: {
-                slidesPerView: 1.3,
+                slidesPerView: 1,
                 spaceBetween: 10,
               },
               500: {
@@ -43,9 +44,9 @@ const OurCarCategorysSection = () => {
               },
             }}
           >
-            {[...new Array(6).keys()].map((e) => (
-              <SwiperSlide key={e}>
-                <CarCategoryCard />
+            {carsCategories.map((carsCategorie, i) => (
+              <SwiperSlide key={i}>
+                <CarCategoryCard {...carsCategorie} />
               </SwiperSlide>
             ))}
           </Swiper>
