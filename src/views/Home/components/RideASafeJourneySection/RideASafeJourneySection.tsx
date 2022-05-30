@@ -5,7 +5,10 @@ import React from "react";
 
 const RideASafeJourneySection = () => {
   return (
-    <section className="bg-dark-900 py-[138px]">
+    <section
+      className="bg-dark-900 py-[100px] lg:py-[138px]"
+      id="ride-a-safe-journey"
+    >
       <div className="container">
         <SectionTitleSubtitle
           title="Ride A Safe Journey"

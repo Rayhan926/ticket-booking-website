@@ -16,10 +16,10 @@ const HeaderTop = () => {
         <div>
           <a
             href="mailto:example@gmail.com"
-            className="hidden sm:flex items-center gap-2 hover:text-primary"
+            className="flex items-center gap-2 hover:text-primary"
           >
             <FaRegEnvelope size={19} />
-            example@gmail.com
+            <span className="hidden sm:inline">example@gmail.com</span>
           </a>
         </div>
 

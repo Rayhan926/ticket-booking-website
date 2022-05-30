@@ -3,7 +3,7 @@ import React from "react";
 
 const AirportListsSection = () => {
   return (
-    <section className="py-[170px] bg-dark-900">
+    <section className="py-[100px] lg:py-[170px] bg-dark-900">
       <div className="container">
         <h2 className="text-center title_lg lg:max-w-[850px] mx-auto">
           Book A Private Transfer At Over 1500 Airports, Stations And Ports

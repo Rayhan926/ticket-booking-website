@@ -5,6 +5,9 @@ import "react-date-range/dist/theme/default.css";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Script from "next/script";
+import DefaultLayout from "@layouts/DefaultLayout";
+import { Provider } from "react-redux";
+import store from "@state";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL-bwYmXMyQ9yyATcDndwbyACVPJRN-b0&libraries=places"
         defer
       />
-      <Component {...pageProps} />
+
+      <Provider store={store}>
+        <DefaultLayout>
+          <Component {...pageProps} />
+        </DefaultLayout>
+      </Provider>
     </>
   );
 }

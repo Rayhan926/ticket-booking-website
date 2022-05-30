@@ -48,6 +48,9 @@ export interface PickDateTimeModalProps {
   value: PickDateTimeValue;
   setValue: (e: PickDateTimeValue) => void;
   pickupTimeTitle?: ReactNode;
+  minDate?: Date;
+  minHour?: string;
+  minMinute?: string;
 }
 
 export interface PickDateTimeWidgetProps {
@@ -58,6 +61,9 @@ export interface PickDateTimeWidgetProps {
   widgetTitle: ReactNode;
   id: string;
   pickupTimeTitle?: ReactNode;
+  minDate?: Date;
+  minHour?: string;
+  minMinute?: string;
 }
 
 export interface IncrementDecrement {

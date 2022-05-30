@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 const HowDoesItWorkSection = () => {
   return (
-    <section className="bg-dark-900 py-[138px]">
+    <section className="bg-dark-900 py-[90px] lg:py-[138px]">
       <div className="container">
         <SectionTitleSubtitle
           title="How Does It Work"

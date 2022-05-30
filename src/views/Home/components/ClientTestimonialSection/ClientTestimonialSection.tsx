@@ -6,10 +6,10 @@ import { Navigation } from "swiper";
 
 const ClientTestimonialSection = () => {
   return (
-    <section className="bg-primary pt-[150px] pb-[250px] mt-[200px]">
+    <section className="bg-primary pt-[100px] pb-[180px] lg:pt-[150px] lg:pb-[250px] mt-[100px] lg:mt-[200px]">
       <div className="container">
         <h2 className="title_lg text-white">What our client's say</h2>
-        <div className="flex items-center justify-between mt-4">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-4 gap-y-3">
           <p className="text_md text-[#E4E4E5] max-w-[510px]">
             Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac.
             Ut sit amet erat nec nibh .
@@ -20,10 +20,10 @@ const ClientTestimonialSection = () => {
         </div>
 
         <div className="mt-[50px] relative client_review_slider">
-          <button className="navigation_prev right-[calc(100%+30px)]">
+          <button className="navigation_prev left-0 2xl:right-[calc(100%+30px)] 2xl:left-auto">
             <HiArrowNarrowLeft size={35} />
           </button>
-          <button className="navigation_next left-[calc(100%+30px)]">
+          <button className="navigation_next right-0 2xl:right-0 2xl:left-[calc(100%+30px)]">
             <HiArrowNarrowRight size={35} />
           </button>
           <Swiper
@@ -33,6 +33,19 @@ const ClientTestimonialSection = () => {
             navigation={{
               prevEl: ".navigation_prev",
               nextEl: ".navigation_next",
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              800: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1000: {
+                slidesPerView: 3,
+              },
             }}
           >
             {[...new Array(6).keys()].map((e) => (

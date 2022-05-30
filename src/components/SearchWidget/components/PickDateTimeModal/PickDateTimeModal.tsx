@@ -10,6 +10,9 @@ const PickDateTimeModal = ({
   value,
   setValue,
   pickupTimeTitle = "Pickup Time",
+  minDate,
+  minHour,
+  minMinute,
 }: PickDateTimeModalProps) => {
   const [position, setPosition] = useState<React.CSSProperties>({
     top: 0,
@@ -25,8 +28,6 @@ const PickDateTimeModal = ({
       hour: value.time.hour,
     },
   });
-
-  //   console.log({ time, date });
 
   const timeOnChangeHandler = (e: any, key: string) => {
     setDateTime((prev) => {
@@ -55,11 +56,35 @@ const PickDateTimeModal = ({
 
   const openModalHandler = () => {
     setIsOpenModal(true);
-    document.body.style.overflowY = "hidden";
+    document.querySelector("#headerMain")?.classList.add("hide_fixed_header");
   };
   const closeModalHandler = () => {
     setIsOpenModal(false);
-    document.body.style.overflowY = "overlay";
+    document
+      .querySelector("#headerMain")
+      ?.classList.remove("hide_fixed_header");
+  };
+
+  const setModalContentPosition = (elm: any) => {
+    const rect = elm.getBoundingClientRect();
+    const windowSize = window.innerWidth;
+    if (windowSize < 769) {
+      setPosition((prev) => ({
+        ...prev,
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+      }));
+    } else {
+      setPosition((prev) => ({
+        ...prev,
+        top: rect.top,
+        left: rect.left,
+        width: rect.width,
+        height: "auto",
+      }));
+    }
   };
 
   useEffect(() => {
@@ -68,30 +93,21 @@ const PickDateTimeModal = ({
     );
     if (!targetElm) return;
 
-    targetElm.addEventListener("click", (e) => {
-      const rect = targetElm.getBoundingClientRect();
-      const windowSize = window.innerWidth;
-      if (windowSize < 1000) {
-        setPosition((prev) => ({
-          ...prev,
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }));
-      } else {
-        setPosition((prev) => ({
-          ...prev,
-          top: rect.top,
-          left: rect.left,
-          width: rect.width,
-          height: "auto",
-        }));
-      }
-
+    targetElm.addEventListener("click", () => {
+      setModalContentPosition(targetElm);
       openModalHandler();
     });
   }, [targetElmId]);
+
+  useEffect(() => {
+    const targetElm: HTMLDivElement | null = document.querySelector(
+      `#${targetElmId}`,
+    );
+    window.addEventListener("scroll", () => {
+      if (!targetElm || !isOpenModal) return;
+      setModalContentPosition(targetElm);
+    });
+  }, [isOpenModal]);
 
   useEffect(() => {
     const shouldCloseModal = (e: any) => {
@@ -110,7 +126,7 @@ const PickDateTimeModal = ({
   return (
     <div
       id="modalOverly"
-      className={`fixed top-0 left-0 w-full h-screen z-[99999999] duration-150
+      className={`fixed top-0 left-0 w-full h-screen z-[9999999999] duration-150
         ${
           isOpenModal
             ? "opacity-100 pointer-events-auto"
@@ -118,7 +134,7 @@ const PickDateTimeModal = ({
         }`}
     >
       <div
-        className="px-1 pb-2 border border-dark-500/70 bg-white drop-shadow-md absolute datePickerWrapper w-full h-full"
+        className="px-1 pb-2 border border-dark-500/70 bg-white drop-shadow-md absolute datePickerWrapper w-full h-full z-[99999]"
         style={{
           ...position,
           ...(isOpenModal
@@ -139,7 +155,7 @@ const PickDateTimeModal = ({
         <div>
           <Calendar
             showMonthAndYearPickers={false}
-            minDate={new Date()}
+            minDate={minDate || new Date()}
             date={dateTime.date || new Date()}
             onChange={(r) => dateChangeHandler(r)}
           />
@@ -158,7 +174,11 @@ const PickDateTimeModal = ({
               onChange={(e) => timeOnChangeHandler(e, "hour")}
             >
               {hoursOptions.map(({ value, label }, i) => (
-                <option key={i} value={value}>
+                <option
+                  key={i}
+                  value={value}
+                  disabled={parseInt(value) < parseInt(minHour || "0")}
+                >
                   {label}
                 </option>
               ))}
@@ -170,7 +190,11 @@ const PickDateTimeModal = ({
               onChange={(e) => timeOnChangeHandler(e, "minute")}
             >
               {minutesOptions.map(({ value, label }, i) => (
-                <option key={i} value={value}>
+                <option
+                  key={i}
+                  value={value}
+                  disabled={parseInt(value) < parseInt(minMinute || "0")}
+                >
                   {label}
                 </option>
               ))}

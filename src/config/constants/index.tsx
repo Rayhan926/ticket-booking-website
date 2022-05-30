@@ -440,3 +440,9 @@ export const minutesOptions = [
     value: "55",
   },
 ];
+
+export const placesKeyword = {
+  airport: ["airplane", "airport", "plane"],
+  railway: ["train", "railway", "rail"],
+  hotels: ["hotel", "hotels"],
+};

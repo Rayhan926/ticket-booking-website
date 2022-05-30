@@ -7,24 +7,18 @@ import AirportListsSection from "@views/Home/components/AirportListsSection";
 import ComapnyLogoSection from "@views/Home/components/ComapnyLogoSection";
 import ClientTestimonialSection from "@views/Home/components/ClientTestimonialSection";
 import OurCarCategorysSection from "@views/Home/components/OurCarCategorysSection";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
-import SearchWidget from "@components/SearchWidget";
 
 const Home = () => {
   return (
     <>
-      <Header />
       <HeroSection />
-      <SearchWidget />
       <RideASafeJourneySection />
-      {/* <OurCarCategorysSection />
+      <OurCarCategorysSection />
       <HowDoesItWorkSection />
       <WeHaveSection />
       <ClientTestimonialSection />
       <AirportListsSection />
       <ComapnyLogoSection />
-      <Footer /> */}
     </>
   );
 };

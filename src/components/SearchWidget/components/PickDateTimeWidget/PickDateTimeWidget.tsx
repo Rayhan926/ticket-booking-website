@@ -14,6 +14,9 @@ const PickDateTimeWidget = ({
   widgetTitle,
   pickupTimeTitle,
   id,
+  minDate,
+  minHour,
+  minMinute,
 }: PickDateTimeWidgetProps) => {
   const hour = value.time.hour;
   const minute = value.time.minute;
@@ -86,6 +89,9 @@ const PickDateTimeWidget = ({
         value={value}
         setValue={setValue}
         pickupTimeTitle={pickupTimeTitle}
+        minDate={minDate}
+        minHour={minHour}
+        minMinute={minMinute}
       />
     </>
   );

@@ -7,6 +7,9 @@
 body {
   overflow-y: overlay;
 }
+html {
+  @apply scroll-smooth;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -40,7 +43,7 @@ body {
 
 .client_review_slider .navigation_prev,
 .client_review_slider .navigation_next {
-  @apply absolute top-1/2 -translate-y-1/2 text-white disabled:!opacity-50 z-[5];
+  @apply absolute -bottom-20 2xl:top-1/2 2xl:-translate-y-1/2 2xl:bottom-auto text-white disabled:!opacity-50 z-[5];
 }
 .client_review_slider .navigation_prev.swiper-button-disabled,
 .client_review_slider .navigation_next.swiper-button-disabled {
@@ -49,7 +52,7 @@ body {
 
 .car_categories_slider .navigation_prev,
 .car_categories_slider .navigation_next {
-  @apply absolute top-1/2 -translate-y-1/2 text-primary disabled:text-[#C9C9C9] z-[5];
+  @apply absolute -bottom-7 lg:top-1/2 lg:-translate-y-1/2 lg:bottom-auto text-primary disabled:text-[#C9C9C9] z-[5];
 }
 
 .car_categories_slider .navigation_prev.swiper-button-disabled,
@@ -73,7 +76,10 @@ body {
 }
 
 .fixed_header {
-  @apply fixed top-0 left-0 w-full z-[999999999];
+  @apply fixed top-0 left-0 w-full z-[99999];
+}
+.hide_fixed_header {
+  @apply opacity-0 pointer-events-none md:!opacity-100 md:!pointer-events-auto;
 }
 .white_header {
   @apply bg-white text-dark;

@@ -7,6 +7,7 @@ import { IoClose } from "react-icons/io5";
 const HeaderMain = () => {
   const headerOffsetTop = useRef<any>(null!);
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
+  const [isFixedHeader, setIsFixedHeader] = useState(false);
 
   useEffect(() => {
     const headerMain: HTMLDivElement | null =
@@ -21,15 +22,17 @@ const HeaderMain = () => {
 
       if (window.scrollY >= headerMain?.offsetTop) {
         headerMain.classList.add("fixed_header");
+        setIsFixedHeader(true);
       }
 
       if (window.scrollY < headerOffsetTop.current) {
         headerMain.classList.remove("fixed_header");
+        setIsFixedHeader(false);
       }
 
       if (
         window.scrollY >
-        heroSection.clientHeight - (headerMain.clientHeight + 180)
+        heroSection.clientHeight - (headerMain.clientHeight + 300)
       ) {
         headerMain.classList.add("white_header");
       } else {
@@ -87,7 +90,16 @@ const HeaderMain = () => {
           </ul>
         </div>
 
-        <div className="md:hidden" onClick={() => setIsOpenMobileNav(true)}>
+        <div
+          className={`md:hidden duration-300 ${
+            isOpenMobileNav
+              ? `${
+                  !isFixedHeader ? "-translate-y-[55px] translate-x-1" : ""
+                } pointer-events-none z-[9999] text-white`
+              : ""
+          }`}
+          onClick={() => setIsOpenMobileNav(true)}
+        >
           {isOpenMobileNav ? <IoClose size={30} /> : <FiMenu size={30} />}
         </div>
       </div>

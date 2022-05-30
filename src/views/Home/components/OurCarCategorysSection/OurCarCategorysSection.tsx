@@ -7,7 +7,7 @@ import CarCategoryCard from "@views/Home/components/OurCarCategorysSection/compo
 
 const OurCarCategorysSection = () => {
   return (
-    <section className="bg-dark-800 pt-[55px] pb-[65px]">
+    <section className="bg-dark-800 pt-[55px] pb-[90px] lg:pb-[65px]">
       <div className="container">
         <SectionTitleSubtitle
           title="Our Car Categorys"
@@ -15,12 +15,12 @@ const OurCarCategorysSection = () => {
         />
 
         <div className="mt-[50px] relative lg:w-[85%] mx-auto car_categories_slider">
-          {/* <button className="navigation_prev right-[calc(100%+30px)]">
+          <button className="navigation_prev left-0 lg:right-[calc(100%+30px)] lg:left-auto">
             <IoMdArrowRoundBack size={35} />
           </button>
-          <button className="navigation_next left-[calc(100%+30px)]">
+          <button className="navigation_next right-0 lg:right-0 lg:left-[calc(100%+30px)]">
             <IoMdArrowRoundForward size={35} />
-          </button> */}
+          </button>
           <Swiper
             slidesPerView={3}
             spaceBetween={30}

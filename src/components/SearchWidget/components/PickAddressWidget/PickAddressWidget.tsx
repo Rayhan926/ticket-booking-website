@@ -5,8 +5,21 @@ import PlacesAutocomplete from "react-places-autocomplete";
 import { IoMdTrain } from "react-icons/io";
 import { PickAddressWidgetProps } from "@config/types";
 import CircularProgress from "@components/CircularProgress";
+import { placesKeyword } from "@config/constants";
+import { FaHotel } from "react-icons/fa";
+import { AiTwotoneHome } from "react-icons/ai";
 
 const TooltipComponent = Tooltip as unknown as React.FC<any>;
+
+const wordInString = (s: string, words: string[]) => {
+  let truFalse: boolean[] = [];
+
+  words.forEach((word) => {
+    truFalse.push(new RegExp("\\b" + word + "\\b", "i").test(s));
+  });
+
+  return truFalse.filter((e) => e).length > 0 ? true : false;
+};
 
 const PickAddressWidget = ({ onSelect }: PickAddressWidgetProps) => {
   const searchInputRef = useRef<HTMLInputElement>(null!);
@@ -15,13 +28,6 @@ const PickAddressWidget = ({ onSelect }: PickAddressWidgetProps) => {
   const [value, setValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState<any>(null!);
-
-  const hasInclude = (text: string, key: string) => {
-    return text
-      .split(" ")
-      .map((e: any) => e.toLowerCase())
-      .includes(key);
-  };
 
   const renderFunc = ({ getInputProps, suggestions, loading }: any) => {
     setResults(suggestions);
@@ -95,12 +101,23 @@ const PickAddressWidget = ({ onSelect }: PickAddressWidgetProps) => {
                       className="flex items-start gap-2 px-4 py-2.5 cursor-pointer hover:bg-primary/30 text-dark duration-100 rounded-md"
                     >
                       <span className="shrink-0 translate-y-[3px]">
-                        {hasInclude(suggestion.description, "train") ? (
+                        {wordInString(
+                          suggestion.description,
+                          placesKeyword.railway,
+                        ) ? (
                           <IoMdTrain size={20} />
-                        ) : hasInclude(suggestion.description, "airplane") ? (
-                          <IoAirplane size={20} />
+                        ) : wordInString(
+                            suggestion.description,
+                            placesKeyword.airport,
+                          ) ? (
+                          <IoAirplane size={18} />
+                        ) : wordInString(
+                            suggestion.description,
+                            placesKeyword.hotels,
+                          ) ? (
+                          <FaHotel size={16} />
                         ) : (
-                          <IoLocationSharp size={20} />
+                          <AiTwotoneHome size={20} />
                         )}
                       </span>
                       <span>{suggestion.description}</span>
@@ -120,18 +137,20 @@ const PickAddressWidget = ({ onSelect }: PickAddressWidgetProps) => {
       trigger="click"
       theme="light"
     >
-      <div className="rounded-[5px] bg-dark-400 px-5 py-4">
-        <div className="flex items-center gap-2 text-dark-300 capitalize font-medium">
-          <IoLocationSharp size={20} />
-          pickup Address:
+      <label>
+        <div className="rounded-[5px] bg-dark-400 px-5 py-4">
+          <div className="flex items-center gap-2 text-dark-300 capitalize font-medium">
+            <IoLocationSharp size={20} />
+            pickup Address:
+          </div>
+          <PlacesAutocomplete
+            value={value}
+            onChange={(address) => setValue(address)}
+          >
+            {renderFunc}
+          </PlacesAutocomplete>
         </div>
-        <PlacesAutocomplete
-          value={value}
-          onChange={(address) => setValue(address)}
-        >
-          {renderFunc}
-        </PlacesAutocomplete>
-      </div>
+      </label>
     </TooltipComponent>
   );
 };
