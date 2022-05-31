@@ -579,19 +579,6 @@ export const clientReviews: ClientReviewType[] = [
     stars: 5,
     rating: 5.0,
   },
-  {
-    reviewText:
-      "Some days a motivational quote can provide a quick pick-me-up for employees and even management. They can be a breath of fresh air when it comes to a drab afternoon.",
-    img: {
-      src: "/img/profile-3.png",
-      width: 58,
-      height: 58,
-      alt: "Patrick Bell",
-    },
-    name: "Patrick Bell",
-    stars: 5,
-    rating: 5.0,
-  },
 ];
 
 export const bookingSteps: BookingStep[] = [
@@ -752,4 +739,20 @@ export const availableCars: AvailableCarType[] = [
     hasFreeCancelation: true,
     hasNoHiddenCost: true,
   },
+];
+
+export const trustsList = [
+  "Thousands Of Customer Served",
+  "Instant Confirmation",
+  "All Inclusive Pricing",
+  "Secure Payment By Credit Card, And Debit Card Or Paypal",
+];
+
+export const brand_small_logos = [
+  "visa_small.png",
+  "mastercard_small.png",
+  "apple_pay_small.png",
+  "paypal_small.png",
+  "discover_small.png",
+  "google_pay_small.png",
 ];

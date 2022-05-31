@@ -30,6 +30,9 @@ html {
   .text_md {
     @apply text-[15px] leading-[25px] font-normal text-dark-500;
   }
+  .text_sm {
+    @apply text-[14px] leading-[23px] font-normal text-dark-500;
+  }
 
   .container {
     @apply mx-auto px-5 2xl:max-w-[1400px];
@@ -182,4 +185,16 @@ html {
 .datePickerWrapper .rdrDayNumber {
   z-index: 2;
   /* color: #45acd1; */
+}
+
+.swiper-pagination-bullet {
+  @apply w-[15px] h-2 rounded-full bg-primary/10 shrink-0 cursor-pointer;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-primary;
+}
+
+#client_review_next_btn.swiper-button-disabled,
+#client_review_prev_btn.swiper-button-disabled {
+  @apply !text-dark-500 opacity-40;
 }
