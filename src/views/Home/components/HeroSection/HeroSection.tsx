@@ -10,7 +10,7 @@ const HeroSection = () => {
     >
       <img
         src="/img/hero_image.jpg"
-        className="w-full h-full 2xl:h-auto object-cover absolute top-0 left-0"
+        className="w-full h-full object-cover absolute top-0 left-0"
         alt="Reliable Airport Transfers"
       />
 

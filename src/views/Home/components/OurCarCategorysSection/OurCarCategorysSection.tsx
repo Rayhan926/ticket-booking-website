@@ -35,11 +35,11 @@ const OurCarCategorysSection = () => {
                 slidesPerView: 1,
                 spaceBetween: 10,
               },
-              500: {
+              800: {
                 slidesPerView: 2,
                 spaceBetween: 20,
               },
-              1000: {
+              1200: {
                 slidesPerView: 3,
               },
             }}

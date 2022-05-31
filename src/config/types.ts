@@ -1,17 +1,19 @@
-import { ReactNode } from "react";
+import React, { ComponentProps, ReactNode } from "react";
 
 export interface SectionTitleSubtitle {
   title: ReactNode;
   subtitle: ReactNode;
 }
 
+type ImageType = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
 export interface IconCardType {
-  img: {
-    src: string;
-    width: number;
-    height: number;
-    alt: string;
-  };
+  img: ImageType;
   title: ReactNode;
   subtitle: ReactNode;
 }
@@ -88,13 +90,37 @@ export interface PassengersWidget {
 
 export interface ClientReviewType {
   reviewText: string;
-  img: {
-    src: string;
-    width: number;
-    height: number;
-    alt: string;
-  };
+  img: ImageType;
   name: string;
   stars: number;
   rating: number;
+}
+
+export interface BookingStep {
+  title: string;
+  pageUrl: string;
+}
+
+export type IconListProps = {
+  icon: ReactNode;
+  text: ReactNode;
+  titleClass?: string;
+} & ComponentProps<"div">;
+
+export interface AvailableCarType {
+  img: ImageType;
+  description: string;
+  hasPrivateTransfer: boolean;
+  rating: number;
+  hasPorterSercvice: boolean;
+  classType: string;
+  passanger: string | null;
+  suitcase: number | null;
+  hasMeetAndGreetIncluded: boolean;
+  hasFreeWaitingTime: boolean;
+  hasDoorToDoor: boolean;
+  hasSafeJourney: boolean;
+  price: number;
+  hasFreeCancelation: boolean;
+  hasNoHiddenCost: boolean;
 }

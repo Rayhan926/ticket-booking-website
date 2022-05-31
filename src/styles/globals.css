@@ -34,6 +34,10 @@ html {
   .container {
     @apply mx-auto px-5 2xl:max-w-[1400px];
   }
+
+  .card_shadow {
+    box-shadow: 0 4px 16px rgb(129, 129, 129, 0.07);
+  }
 }
 
 #we_have_section {

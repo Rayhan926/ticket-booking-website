@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { IoAirplane, IoClose, IoLocationSharp } from "react-icons/io5";
-import { Tooltip } from "react-tippy";
 import PlacesAutocomplete from "react-places-autocomplete";
 import { IoMdTrain } from "react-icons/io";
 import { PickAddressWidgetProps } from "@config/types";
@@ -8,8 +7,6 @@ import CircularProgress from "@components/CircularProgress";
 import { placesKeyword } from "@config/constants";
 import { FaHotel } from "react-icons/fa";
 import { AiTwotoneHome } from "react-icons/ai";
-
-const TooltipComponent = Tooltip as unknown as React.FC<any>;
 
 const wordInString = (s: string, words: string[]) => {
   let truFalse: boolean[] = [];

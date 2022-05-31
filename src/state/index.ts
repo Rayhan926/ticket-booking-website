@@ -6,6 +6,10 @@ const store = configureStore({
   reducer: {
     search,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 setupListeners(store.dispatch);

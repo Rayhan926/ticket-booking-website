@@ -14,6 +14,8 @@ module.exports = {
           800: "#F8F8F8",
           900: "#FCFCFC",
         },
+        star: "#FFD013",
+        "text-gray": "#B8B8B8",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

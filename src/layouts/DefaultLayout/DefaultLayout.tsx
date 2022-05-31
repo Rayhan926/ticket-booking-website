@@ -4,11 +4,13 @@ import React, { ReactNode } from "react";
 
 const DefaultLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <>
-      <Header />
+    <div className="flex flex-col min-h-screen">
+      {/* <Header /> */}
       {children}
-      <Footer />
-    </>
+      <div className="mt-auto">
+        <Footer />
+      </div>
+    </div>
   );
 };
 

@@ -22,7 +22,7 @@ const ClientReviewCard = ({
         </div>
         <div>
           <h6 className="font-semibold text-dark">{name}</h6>
-          <div className="flex items-center gap-0.5 text-[#FFD013] mt-1">
+          <div className="flex items-center gap-0.5 text-star mt-1">
             {[...new Array(stars).keys()].map((star) => (
               <FaStar key={star} />
             ))}
