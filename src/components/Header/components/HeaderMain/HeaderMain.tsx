@@ -82,7 +82,7 @@ const HeaderMain = () => {
               style={{
                 transitionProperty: "transform",
               }}
-              className={`flex flex-col items-start md:flex-row md:items-center text-lg gap-0 md:gap-10 font-medium bg-white border-r-4 border-primary md:bg-transparent w-[320px] h-full md:border-r-0 md:w-auto md:h-auto pt-6 md:pt-0
+              className={`flex flex-col items-start md:flex-row md:items-center text-lg gap-0 md:gap-10 font-medium bg-white md:bg-transparent w-[320px] h-full md:w-auto md:h-auto pt-6 md:pt-0
             ${isOpenMobileNav ? "translate-x-0 delay-100" : "-translate-x-full"}
             md:translate-x-0 duration-200
             `}

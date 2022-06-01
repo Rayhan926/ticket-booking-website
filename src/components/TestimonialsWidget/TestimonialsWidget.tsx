@@ -56,7 +56,7 @@ const TestimonialsWidget = () => {
 
                     <div className="flex items-center mt-5 gap-2.5">
                       <div className="w-[40px] h-[40px] relative rounded overflow-hidden">
-                        <Image {...img} />
+                        <Image {...img} alt={img.alt || name} />
                       </div>
                       <div>
                         <h6 className="font-semibold text-dark text-sm">
