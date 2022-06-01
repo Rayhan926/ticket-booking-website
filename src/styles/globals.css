@@ -83,13 +83,13 @@ html {
 }
 
 .fixed_header {
-  @apply fixed top-0 left-0 w-full z-[99999];
+  @apply fixed top-0 left-0 w-full z-[999999999];
 }
 .hide_fixed_header {
   @apply opacity-0 pointer-events-none md:!opacity-100 md:!pointer-events-auto;
 }
 .white_header {
-  @apply bg-white text-dark;
+  @apply bg-white;
   box-shadow: 0 0 4px 0px rgb(0, 0, 0, 0.1);
 }
 .white_header a {
@@ -197,4 +197,7 @@ html {
 #client_review_next_btn.swiper-button-disabled,
 #client_review_prev_btn.swiper-button-disabled {
   @apply !text-dark-500 opacity-40;
+}
+.place-card.place-card-medium {
+  @apply hidden;
 }

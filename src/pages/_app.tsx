@@ -2,13 +2,14 @@ import "swiper/css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
 import Script from "next/script";
 import DefaultLayout from "@layouts/DefaultLayout";
 import { Provider } from "react-redux";
 import store from "@state";
+import { CustomNextPage } from "@config/types";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: CustomNextPage) {
+  const headerType = Component?.headerType;
   return (
     <>
       <Script
@@ -19,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       />
 
       <Provider store={store}>
-        <DefaultLayout>
+        <DefaultLayout headerType={headerType}>
           <Component {...pageProps} />
         </DefaultLayout>
       </Provider>

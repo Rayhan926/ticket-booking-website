@@ -5,13 +5,23 @@ import { FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
 import { HiOutlineUserCircle } from "react-icons/hi";
 import { languages } from "@config/constants";
+import { useAppSelector } from "@state/hooks";
+import { useRouter } from "next/router";
 
 const HeaderTop = () => {
+  const router = useRouter();
+  const { headerType } = useAppSelector((state) => state.application);
   const [isOpenLanguageDropdown, setIsOpenLanguageDropdown] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   return (
-    <div className="border-b border-white py-5">
+    <div
+      className={`py-4 text-white ${
+        headerType === "fixed" || router.pathname == "/"
+          ? "border-b border-white"
+          : "bg-dark"
+      }`}
+    >
       <div className="container flex items-center justify-between">
         <div>
           <a

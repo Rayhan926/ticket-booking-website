@@ -35,8 +35,8 @@ const AvailableCarCard = ({
       <div className="flex justify-end text-[13px] text-text-gray">
         Total One Way Price
       </div>
-      <div className="grid grid-cols-[30%,auto,30%]">
-        <div className="border-r border-[#C5C5C5] pr-10">
+      <div className="grid grid-cols-1 gap-y-7 xl:grid-cols-[30%,auto,30%]">
+        <div className="border-none lg:border-r border-[#C5C5C5] pr-10">
           <Image {...img} />
           <p className="text-sm text-[#C2C1C1] leading-[24px]">{description}</p>
           {hasPrivateTransfer && (
@@ -62,7 +62,7 @@ const AvailableCarCard = ({
           )}
         </div>
 
-        <div className="border-r border-[#C5C5C5] pl-[30px] text-sm text-text-gray">
+        <div className="border-none lg:border-r border-[#C5C5C5] xl:pl-[30px] text-sm text-text-gray">
           <h2 className="title_md">{classType}</h2>
           <div className="space-y-3.5">
             <div className="flex items-center mt-4 gap-4">
@@ -97,7 +97,7 @@ const AvailableCarCard = ({
           </div>
         </div>
 
-        <div className="pl-11 pt-6">
+        <div className="xl:pl-11 xl:pt-6">
           <h3 className="text-primary text-[52px] font-medium">{price}$</h3>
           <div className="space-y-2.5 mt-2">
             {hasFreeCancelation && (

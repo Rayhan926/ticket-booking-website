@@ -1,9 +1,19 @@
-import React, { ComponentProps, ReactNode } from "react";
+import { ComponentProps, ReactNode } from "react";
+import type { AppProps } from "next/app";
+import { NextPage } from "next";
 
 export interface SectionTitleSubtitle {
   title: ReactNode;
   subtitle: ReactNode;
 }
+
+export type HeaderType = "fixed" | undefined;
+export type NextPageWithHeaderType = {
+  headerType?: HeaderType;
+} & NextPage;
+export type CustomNextPage = {
+  Component: NextPageWithHeaderType;
+} & AppProps;
 
 type ImageType = {
   src: string;

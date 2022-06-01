@@ -16,7 +16,7 @@ const YourRideInfoWidget = () => {
       <div className="px-[25px] pt-4 pb-3 border-b border-[#CBCBCB]">
         <div className="flex items-center gap-2">
           <RideInfo />
-          <div className="title_sm text-dark">Your Ride Info</div>
+          <div className="title_sm text-base text-dark">Your Ride Info</div>
         </div>
       </div>
 
