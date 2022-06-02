@@ -1,15 +1,18 @@
 import { headerNavLinks } from "@config/constants";
-import { useAppSelector } from "@state/hooks";
+import useHeaderType from "@hooks/useHeaderType";
+import { setHeaderHeight } from "@state/application/applicationSlice";
+import { useAppDispatch } from "@state/hooks";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 
 const HeaderMain = () => {
-  const { headerType } = useAppSelector((state) => state.application);
+  const { isFixed } = useHeaderType();
   const headerOffsetTop = useRef<any>(null!);
   const [isOpenMobileNav, setIsOpenMobileNav] = useState(false);
   const [isFixedHeader, setIsFixedHeader] = useState(false);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const headerMain: HTMLDivElement | null =
@@ -51,9 +54,11 @@ const HeaderMain = () => {
       document.querySelector(".header_height_container");
     if (!header_height_container) return;
 
-    header_height_container.style.height =
-      header_height_container.clientHeight + "px";
-  }, []);
+    const headerMainHeight = header_height_container.clientHeight;
+
+    dispatch(setHeaderHeight(headerMainHeight));
+    header_height_container.style.height = headerMainHeight + "px";
+  }, [dispatch]);
 
   const shouldCloseMobileNav = (e: any) => {
     if (e.target.id === "mobileNavOverley") {
@@ -63,7 +68,10 @@ const HeaderMain = () => {
 
   return (
     <div className="header_height_container">
-      <div id="headerMain" className="duration-200 py-2.5 md:py-0">
+      <div
+        id="headerMain"
+        className={`duration-200 py-2.5 md:py-0 ${isFixed ? "" : "bg-white"}`}
+      >
         <div className="container flex justify-between items-center">
           <Link href={"/"}>
             <a className="text-[30px] font-extrabold">logo</a>
@@ -93,11 +101,7 @@ const HeaderMain = () => {
                     <a
                       className={`
                     hover:text-primary duration-150 py-2.5 md:py-5 block px-6 md:px-0
-                    ${
-                      headerType === "fixed"
-                        ? "text-dark md:text-white"
-                        : " text-dark"
-                    }
+                    ${isFixed ? "text-dark md:text-white" : " text-dark"}
                     `}
                     >
                       {text}

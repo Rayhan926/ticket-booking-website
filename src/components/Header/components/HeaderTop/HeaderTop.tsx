@@ -7,19 +7,17 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { languages } from "@config/constants";
 import { useAppSelector } from "@state/hooks";
 import { useRouter } from "next/router";
+import useHeaderType from "@hooks/useHeaderType";
 
 const HeaderTop = () => {
-  const router = useRouter();
-  const { headerType } = useAppSelector((state) => state.application);
+  const { isFixed } = useHeaderType();
   const [isOpenLanguageDropdown, setIsOpenLanguageDropdown] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
   return (
     <div
       className={`py-4 text-white ${
-        headerType === "fixed" || router.pathname == "/"
-          ? "border-b border-white"
-          : "bg-dark"
+        isFixed ? "border-b border-white" : "bg-dark"
       }`}
     >
       <div className="container flex items-center justify-between">

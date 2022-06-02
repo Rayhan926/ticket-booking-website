@@ -6,10 +6,9 @@ import Script from "next/script";
 import DefaultLayout from "@layouts/DefaultLayout";
 import { Provider } from "react-redux";
 import store from "@state";
-import { CustomNextPage } from "@config/types";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }: CustomNextPage) {
-  const headerType = Component?.headerType;
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script
@@ -20,7 +19,7 @@ function MyApp({ Component, pageProps }: CustomNextPage) {
       />
 
       <Provider store={store}>
-        <DefaultLayout headerType={headerType}>
+        <DefaultLayout>
           <Component {...pageProps} />
         </DefaultLayout>
       </Provider>

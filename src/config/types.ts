@@ -7,14 +7,6 @@ export interface SectionTitleSubtitle {
   subtitle: ReactNode;
 }
 
-export type HeaderType = "fixed" | undefined;
-export type NextPageWithHeaderType = {
-  headerType?: HeaderType;
-} & NextPage;
-export type CustomNextPage = {
-  Component: NextPageWithHeaderType;
-} & AppProps;
-
 type ImageType = {
   src: string;
   width: number;

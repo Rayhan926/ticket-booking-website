@@ -1,23 +1,22 @@
-import { HeaderType } from "@config/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type InitialStateType = {
-  headerType: HeaderType;
+  headerHeight: null | number;
 };
 
 const initialState: InitialStateType = {
-  headerType: undefined,
+  headerHeight: null,
 };
 
 const applicationSlice = createSlice({
   name: "application",
   reducers: {
-    setHeaderType: (state, action: PayloadAction<HeaderType>) => {
-      state.headerType = action.payload;
+    setHeaderHeight: (state, action: PayloadAction<null | number>) => {
+      state.headerHeight = action.payload;
     },
   },
   initialState,
 });
 
 export default applicationSlice.reducer;
-export const { setHeaderType } = applicationSlice.actions;
+export const { setHeaderHeight } = applicationSlice.actions;

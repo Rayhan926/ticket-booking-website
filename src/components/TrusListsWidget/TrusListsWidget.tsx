@@ -23,7 +23,7 @@ const TrusListsWidget = () => {
         ))}
       </div>
 
-      <div className="w-[216px] mx-auto mt-7 grid grid-cols-3 gap-1.5">
+      <div className="w-[250px] mx-auto mt-7 grid grid-cols-3 gap-1.5">
         {brand_small_logos.map((logo, i) => (
           <Image
             key={i}

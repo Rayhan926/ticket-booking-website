@@ -1,16 +1,14 @@
 import React from "react";
 import HeaderTop from "@components/Header/components/HeaderTop";
 import HeaderMain from "@components/Header/components/HeaderMain";
-import { useAppSelector } from "@state/hooks";
-import { useRouter } from "next/router";
+import useHeaderType from "@hooks/useHeaderType";
 
 const Header = () => {
-  const { headerType } = useAppSelector((state) => state.application);
-  const router = useRouter();
+  const { isFixed } = useHeaderType();
   return (
     <header
       className={`${
-        headerType === "fixed" || router.pathname == "/"
+        isFixed
           ? "text-white absolute top-0 left-0 w-full z-10 bg-gradient-to-b from-[#191C26] to-transparent"
           : "text-dark bg-white"
       }`}
