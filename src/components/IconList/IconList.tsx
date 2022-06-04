@@ -3,15 +3,20 @@ import React from "react";
 
 const IconList = ({
   icon,
-  text,
+  title,
   className = "",
   titleClass = "",
+  subtitle,
+  subtitleClass,
   ...props
 }: IconListProps) => {
   return (
-    <div className={`flex items-center gap-2 ${className}`} {...props}>
-      {icon}
-      <p className={`${titleClass}`}>{text}</p>
+    <div>
+      <div className={`flex items-center gap-2 ${className}`} {...props}>
+        {icon}
+        <p className={`${titleClass}`}>{title}</p>
+      </div>
+      {subtitle && <p className={`${subtitleClass}`}>{subtitle}</p>}
     </div>
   );
 };

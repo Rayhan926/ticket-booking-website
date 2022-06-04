@@ -16,6 +16,7 @@ module.exports = {
         },
         star: "#FFD013",
         "text-gray": "#B8B8B8",
+        "input-bg": "#F6F6F6",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

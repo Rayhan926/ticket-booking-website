@@ -6,7 +6,7 @@ import { BsCheckCircleFill } from "react-icons/bs";
 
 const TrusListsWidget = () => {
   return (
-    <div className="rounded-[10px] card_shadow bg-white text-dark pb-[50px] px-[25px] pr-[20px] pt-[30px]">
+    <div className="card_style text-dark pb-[50px] px-[25px] pr-[20px] pt-[30px]">
       <div className="space-y-5 text-sm">
         {trustsList.map((trust, i) => (
           <IconList
@@ -17,7 +17,7 @@ const TrusListsWidget = () => {
                 className="text-primary translate-y-0.5 shrink-0"
               />
             }
-            text={trust}
+            title={trust}
             className="!items-start"
           />
         ))}

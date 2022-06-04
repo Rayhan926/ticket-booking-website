@@ -8,11 +8,20 @@ import Miles from "@components/Icons/Miles";
 import OutwardJourney from "@components/Icons/OutwardJourney";
 import RideInfo from "@components/Icons/RideInfo";
 import Users from "@components/Icons/Users";
+import { YourRideInfoProps } from "@config/types";
 import React from "react";
 
-const YourRideInfoWidget = () => {
+const YourRideInfoWidget = ({
+  fromAddress,
+  toAddress,
+  date,
+  time,
+  person,
+  speed,
+  rideTime,
+}: YourRideInfoProps) => {
   return (
-    <div className="rounded-[10px] card_shadow bg-white">
+    <div className="card_style">
       <div className="px-[25px] pt-4 pb-3 border-b border-[#CBCBCB]">
         <div className="flex items-center gap-2">
           <RideInfo />
@@ -23,42 +32,30 @@ const YourRideInfoWidget = () => {
       <div className="px-[25px] space-y-[18px] pb-6 pt-4 text-sm">
         <IconList
           icon={<OutwardJourney />}
-          text="Outward Journey"
+          title="Outward Journey"
           className="text-primary"
         />
         <IconList
           icon={<Airport />}
-          text="Antalya Airport (AYT), Antalya, Turkey"
+          title={fromAddress}
           className="text-dark gap-3"
         />
         <IconList
           icon={<Location />}
-          text="Yalova, Yalova Merkez/Yalova, Turkey"
+          title={toAddress}
           className="text-dark gap-3"
         />
         <IconList
           icon={<Calender />}
-          text="5 Dec,2021"
+          title={date}
           className="text-dark gap-3"
         />
-        <IconList
-          icon={<Clock />}
-          text="12.00 (Pm)"
-          className="text-dark gap-3"
-        />
-        <IconList
-          icon={<Users />}
-          text="2 Person"
-          className="text-dark gap-3"
-        />
-        <IconList
-          icon={<Miles />}
-          text="122 Km/50 Miles"
-          className="text-dark gap-3"
-        />
+        <IconList icon={<Clock />} title={time} className="text-dark gap-3" />
+        <IconList icon={<Users />} title={person} className="text-dark gap-3" />
+        <IconList icon={<Miles />} title={speed} className="text-dark gap-3" />
         <IconList
           icon={<Clock2 />}
-          text="2 Hours"
+          title={rideTime}
           className="text-dark gap-3"
         />
       </div>

@@ -5,6 +5,7 @@ import type {
   FooterLinksSectionsType,
   HeaderNavLink,
   IconCardType,
+  YourRideInfoProps,
 } from "@config/types";
 
 export const headerNavLinks: HeaderNavLink[] = [
@@ -588,7 +589,7 @@ export const bookingSteps: BookingStep[] = [
   },
   {
     title: "Extras",
-    pageUrl: "#",
+    pageUrl: "/extra",
   },
   {
     title: "Details",
@@ -623,6 +624,7 @@ export const availableCars: AvailableCarType[] = [
     price: 150,
     hasFreeCancelation: true,
     hasNoHiddenCost: true,
+    popular: true,
   },
   {
     img: {
@@ -669,6 +671,7 @@ export const availableCars: AvailableCarType[] = [
     price: 200,
     hasFreeCancelation: true,
     hasNoHiddenCost: true,
+    popular: true,
   },
   {
     img: {
@@ -738,6 +741,7 @@ export const availableCars: AvailableCarType[] = [
     price: 250,
     hasFreeCancelation: true,
     hasNoHiddenCost: true,
+    popular: true,
   },
 ];
 
@@ -756,3 +760,15 @@ export const brand_small_logos = [
   "discover_small.png",
   "google_pay_small.png",
 ];
+
+export const yourRideInfo: YourRideInfoProps = {
+  fromAddress: "Antalya Airport (AYT), Antalya, Turkey",
+  toAddress: "Yalova, Yalova Merkez/Yalova, Turkey",
+  date: "5 Dec,2021",
+  time: "12.00 (Pm)",
+  person: "2 Person",
+  speed: "122 Km/50 Miles",
+  rideTime: "2 Hours",
+};
+
+export const companyLogoSectionPageUrls = ["/", "/pick-vehicle"];

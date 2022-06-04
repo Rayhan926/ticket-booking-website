@@ -105,8 +105,10 @@ export interface BookingStep {
 
 export type IconListProps = {
   icon: ReactNode;
-  text: ReactNode;
+  title: ReactNode;
   titleClass?: string;
+  subtitle?: ReactNode;
+  subtitleClass?: string;
 } & ComponentProps<"div">;
 
 export interface AvailableCarType {
@@ -125,4 +127,34 @@ export interface AvailableCarType {
   price: number;
   hasFreeCancelation: boolean;
   hasNoHiddenCost: boolean;
+  popular?: boolean;
+}
+
+export interface YourRideInfoProps {
+  fromAddress: string;
+  toAddress: string;
+  date: string;
+  time: string;
+  person: string;
+  speed: string;
+  rideTime: string;
+}
+
+export interface BookingFormLayoutProps {
+  children: ReactNode;
+  sidebar: ReactNode;
+  title: ReactNode;
+}
+
+export interface YourBookingInfoWidgetProps {
+  priec: string;
+  category: string;
+  hasHiddenCost?: boolean;
+}
+
+export interface SeatConfigureProps {
+  icon: ReactNode;
+  title: ReactNode;
+  subtitle: ReactNode;
+  isFree?: boolean;
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 const HelpCenterWidget = () => {
   return (
-    <div className="rounded-[10px] card_shadow bg-white px-[30px] py-[23px] overflow-hidden flex items-center gap-5">
+    <div className="card_style px-[30px] py-[23px] overflow-hidden flex items-center gap-5">
       <HelpCenter />
       <div>
         <h5 className="title_sm">Help Center</h5>

@@ -1,4 +1,4 @@
-import { clientReviews } from "@config/constants";
+import { ClientReviewType } from "@config/types";
 import Image from "next/image";
 import React from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
@@ -6,9 +6,13 @@ import { FaStar } from "react-icons/fa";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const TestimonialsWidget = () => {
+const TestimonialsWidget = ({
+  clientReviews,
+}: {
+  clientReviews: ClientReviewType[];
+}) => {
   return (
-    <div className="rounded-[10px] card_shadow bg-white px-[30px] py-[23px] overflow-hidden">
+    <div className="card_style px-[30px] py-[23px] overflow-hidden">
       <h5 className="title_sm">Testimonials</h5>
       <p className="text_md text-dark mt-1.5">
         4.7 out of 5 based on <span className="font-medium">846 reviews</span>
@@ -26,7 +30,7 @@ const TestimonialsWidget = () => {
           </button>
         </div>
 
-        <div className="card_shadow rounded-md">
+        <div className="card_style">
           <Swiper
             modules={[Pagination, Navigation]}
             pagination={{
@@ -39,7 +43,10 @@ const TestimonialsWidget = () => {
             }}
           >
             {clientReviews.map(
-              ({ name, img, rating, reviewText, stars }, i) => (
+              (
+                { name, img, rating, reviewText, stars }: ClientReviewType,
+                i: number,
+              ) => (
                 <SwiperSlide key={i}>
                   <div className="rounded-md px-[15px] pt-[30px] pb-5">
                     <p className="text_sm text-dark leading-[28px]">

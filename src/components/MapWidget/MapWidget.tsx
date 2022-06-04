@@ -3,7 +3,7 @@ import React from "react";
 
 const MapWidget = () => {
   return (
-    <div className="rounded-[10px] card_shadow bg-white overflow-hidden">
+    <div className="card_style overflow-hidden">
       <div className="px-[25px] pt-4 pb-3 flex items-center gap-3 title_sm text-base text-dark">
         <ViewMap />
         View Map
