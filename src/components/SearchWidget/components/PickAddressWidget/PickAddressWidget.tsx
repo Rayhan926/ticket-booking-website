@@ -57,7 +57,7 @@ const PickAddressWidget = ({
                   >
                     <IoClose />
                   </div>
-                  <p className="line_clam_1">
+                  <p className="line-clamp-1">
                     {(selectedLocation as any)?.description}
                   </p>
                 </div>

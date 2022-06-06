@@ -4,6 +4,10 @@ import FlightNumber from "@components/Icons/FlightNumber";
 import React from "react";
 import { BsInfoCircle } from "react-icons/bs";
 import SeatConfigure from "../SeatConfigure";
+import { MdOutlineHelp } from "react-icons/md";
+import { Tooltip } from "react-tippy";
+
+const TooltipComponent = Tooltip as unknown as React.FC<any>;
 
 const ExtraForm = () => {
   return (
@@ -11,7 +15,20 @@ const ExtraForm = () => {
       <div className="space-y-[15px]">
         {/* Flight Number --Start-- */}
         <div className="card_style px-[35px] py-5">
-          <h5 className="title_sm text-xl">Flight Number</h5>
+          <div className="flex items-center gap-5">
+            <h5 className="title_sm text-xl">Flight Number</h5>
+
+            <TooltipComponent
+              title="Don't have your flight number yet? You will be able to provide your flight number even after booking"
+              position="top"
+              trigger="mouseenter"
+              arrow
+            >
+              <div className="text-primary">
+                <MdOutlineHelp size={25} />
+              </div>
+            </TooltipComponent>
+          </div>
           <div>
             <div className="relative">
               <div className="absolute top-1/2 -translate-y-1/2 left-6">
@@ -58,7 +75,20 @@ const ExtraForm = () => {
 
         {/* Note For Travel --Start-- */}
         <div className="card_style px-[35px] py-5">
-          <h5 className="title_sm text-xl">Note For Travel</h5>
+          <div className="flex items-center gap-5">
+            <h5 className="title_sm text-xl">Note For Travel</h5>
+
+            <TooltipComponent
+              title="Don't have your flight number yet? You will be able to provide your flight number even after booking"
+              position="top"
+              trigger="mouseenter"
+              arrow
+            >
+              <div className="text-primary">
+                <MdOutlineHelp size={25} />
+              </div>
+            </TooltipComponent>
+          </div>
           <p className="text-dark text-[13px] mt-2">
             <span className="font-semibold">From:</span> Antalya Airport (AYT),
             Antalya, Turkey <span className="font-semibold">To:</span> Yalova,

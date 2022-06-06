@@ -1,6 +1,10 @@
+import BestPriceGuarantee from "@components/Icons/BestPriceGuarantee";
+import FreeCancelCalender from "@components/Icons/FreeCancelCalender";
+import IncludedVat from "@components/Icons/IncludedVat";
 import type {
   AvailableCarType,
   BookingStep,
+  BookWithConfidenceCard,
   ClientReviewType,
   FooterLinksSectionsType,
   HeaderNavLink,
@@ -593,11 +597,11 @@ export const bookingSteps: BookingStep[] = [
   },
   {
     title: "Details",
-    pageUrl: "#",
+    pageUrl: "/details",
   },
   {
     title: "Payment",
-    pageUrl: "#",
+    pageUrl: "/payment",
   },
 ];
 
@@ -771,4 +775,42 @@ export const yourRideInfo: YourRideInfoProps = {
   rideTime: "2 Hours",
 };
 
-export const companyLogoSectionPageUrls = ["/", "/pick-vehicle"];
+export const companyLogoSectionPageUrls = [
+  "/",
+  "/pick-vehicle",
+  "/extra",
+  "/details",
+];
+
+export const bookWithConfidenceCards: BookWithConfidenceCard[] = [
+  {
+    icon: <BestPriceGuarantee />,
+    description: (
+      <p>
+        Best Price Guarantee. Found Your Transfer For Less?{" "}
+        <span className="font-semibold text-primary">
+          We'll Refund The Difference.
+        </span>
+      </p>
+    ),
+  },
+  {
+    icon: <FreeCancelCalender />,
+    description: (
+      <p>
+        <span className="font-semibold text-primary">Free Cancellation </span>
+        Up To 24 Hours Before Pickup.
+      </p>
+    ),
+  },
+  {
+    icon: <IncludedVat />,
+    description: (
+      <p>
+        <span className="font-semibold text-primary">
+          All Prices Are Inclusive Of VAT And Local Taxes.
+        </span>
+      </p>
+    ),
+  },
+];

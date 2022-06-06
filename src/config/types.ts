@@ -1,6 +1,7 @@
 import { ComponentProps, ReactNode } from "react";
 import type { AppProps } from "next/app";
 import { NextPage } from "next";
+import { ImageProps } from "next/image";
 
 export interface SectionTitleSubtitle {
   title: ReactNode;
@@ -157,4 +158,19 @@ export interface SeatConfigureProps {
   title: ReactNode;
   subtitle: ReactNode;
   isFree?: boolean;
+}
+
+export type CheckboxProps = {
+  type?: "checkbox";
+  label?: ReactNode;
+} & Omit<React.ComponentProps<"input">, "type">;
+
+export type InputProps = {
+  label?: ReactNode;
+  helperText?: ReactNode;
+} & React.ComponentProps<"input">;
+
+export interface BookWithConfidenceCard {
+  icon: ReactNode;
+  description: ReactNode;
 }

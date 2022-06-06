@@ -1,6 +1,7 @@
 import "swiper/css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import "react-tippy/dist/tippy.css";
 import "../styles/globals.css";
 import Script from "next/script";
 import DefaultLayout from "@layouts/DefaultLayout";

@@ -97,30 +97,6 @@ html {
   @apply text-dark;
 }
 
-.tippy-popper {
-  pointer-events: auto !important;
-  width: 300px;
-}
-.tippy-tooltip {
-  background-color: #fff !important;
-  padding: 0 !important;
-  text-align: left !important;
-}
-.tippy-popper .tippy-tooltip.light-theme {
-  @apply !shadow-md !shadow-slate-100;
-}
-
-.line_clam_1 {
-  overflow: hidden;
-  display: block;
-  -webkit-line-clamp: 1;
-  display: box;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  white-space: normal;
-}
-
 ._svg_spinner {
   animation: rotate 2s linear infinite;
 }
@@ -201,4 +177,20 @@ html {
 }
 .place-card.place-card-medium {
   @apply hidden;
+}
+
+.phone_number_input_wrapper input {
+  @apply !pr-6 !pl-[95px] !py-5 !text-base !h-[69.98px] !bg-[#f6f6f6] !border-none !w-full;
+}
+
+.phone_number_input_wrapper .flag-dropdown {
+  @apply !h-[calc(100%-6px)] !top-1/2 !-translate-y-1/2 !left-[3px] !bg-white !border-none !px-5;
+}
+
+.phone_number_input_wrapper .flag {
+  @apply !scale-150;
+}
+
+.phone_number_input_wrapper .country-list {
+  @apply !left-0;
 }
