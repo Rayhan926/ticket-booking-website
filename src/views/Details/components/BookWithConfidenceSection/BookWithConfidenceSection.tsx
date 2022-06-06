@@ -16,9 +16,9 @@ const BookWithConfidenceSection = () => {
                 className="px-6 pb-5 pt-[30px] flex flex-col items-center card_style"
               >
                 {icon}
-                <p className="text-dark text-sm text-center mt-5">
+                <div className="text-dark text-sm text-center mt-5">
                   {description}
-                </p>
+                </div>
               </div>
             ))}
           </div>
