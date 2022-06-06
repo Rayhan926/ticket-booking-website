@@ -12,8 +12,8 @@ const BookingFormLayout = ({
   const { headerHeight } = useAppSelector((state) => state.application);
   return (
     <>
-      <FreeCancelationBanner />
-      <BookingStepsNavigation />
+      {/* <FreeCancelationBanner />
+      <BookingStepsNavigation /> */}
       <section className="bg-dark-900 relative z-[1] pb-10">
         <div className="container">
           <h1 className="title_md text-dark">{title}</h1>

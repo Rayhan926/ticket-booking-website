@@ -9,7 +9,7 @@ const Details = () => {
       <BookingFormLayout sidebar={<DetailsSidebar />} title="Passenger Details">
         <DetailsForm />
       </BookingFormLayout>
-      <BookWithConfidenceSection />
+      {/* <BookWithConfidenceSection /> */}
     </>
   );
 };

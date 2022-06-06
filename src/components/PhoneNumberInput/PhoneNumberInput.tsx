@@ -5,7 +5,6 @@ import "react-phone-input-2/lib/style.css";
 
 const PhoneNumberInput = () => {
   const [phone, setPhone] = useState<any>("");
-  console.log({ phone });
   return (
     <div className="phone_number_input_wrapper">
       <p className="text-[13px] text-dark mb-1.5">Phone Number</p>

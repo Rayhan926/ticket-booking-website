@@ -6,7 +6,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className = "", label, helperText, ...props }, ref) => {
     return (
       <label className="inline-block w-full">
-        {label && <p className="text-[13px] text-dark mb-1.5">{label}</p>}
+        {label && <div className="text-[13px] text-dark mb-1.5">{label}</div>}
         <input
           ref={ref}
           type="text"
