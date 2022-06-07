@@ -6,11 +6,11 @@ const TotalPrice = () => {
   return (
     <div className="mt-[55px]">
       <h1 className="title_md text-primary">Total Price</h1>
-      <div className="card_style mt-5 flex items-center justify-between pl-[25px] gap-5">
+      <div className="card_style pt-6 pb-4 sm:py-0 gap-3 mt-5 flex flex-col sm:flex-row sm:items-center justify-between pl-[25px] sm:gap-5">
         <p className="text-dark">One Way Tranfer</p>
-        <div className="py-4 pr-[102px]">
-          <div className="flex items-stretch">
-            <div className="dasshed_border h-[95px] w-1 mr-[60px]"></div>
+        <div className="py-4 sm:pr-6 lg:pr-[102px]">
+          <div className="flex justify-start items-stretch">
+            <div className="dasshed_border hidden sm:block h-[95px] w-1 mr-8 xl:mr-[60px]"></div>
             <div>
               <p className="text-dark">Total</p>
               <h5 className="text-[40px] leading-[48px] font-medium text-primary">

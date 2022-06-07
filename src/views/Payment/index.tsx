@@ -5,7 +5,10 @@ import PaymentForm from "./components/PaymentForm";
 
 const Payment = () => {
   return (
-    <BookingFormLayout sidebar={<DetailsSidebar />}>
+    <BookingFormLayout
+      sidebar={<DetailsSidebar />}
+      sectionClass="pb-[100px] lg:pb-[250px]"
+    >
       <PaymentForm />
     </BookingFormLayout>
   );

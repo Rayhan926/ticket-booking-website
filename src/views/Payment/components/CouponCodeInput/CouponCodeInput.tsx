@@ -3,7 +3,7 @@ import React from "react";
 const CouponCodeInput = () => {
   return (
     <div className="card_style px-10 pb-[34px] pt-[53px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-6">
         <div>
           <p className="text-[13px] text-dark mb-1.5">Use Discount Code</p>
           <form className="relative">

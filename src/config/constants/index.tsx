@@ -9,6 +9,7 @@ import type {
   FooterLinksSectionsType,
   HeaderNavLink,
   IconCardType,
+  PaymentOption,
   YourRideInfoProps,
 } from "@config/types";
 
@@ -812,5 +813,56 @@ export const bookWithConfidenceCards: BookWithConfidenceCard[] = [
         </span>
       </p>
     ),
+  },
+];
+
+export const paymentOptions: PaymentOption[] = [
+  {
+    img: {
+      src: "/img/company-logos/visa.png",
+      width: 56,
+      height: 18,
+      alt: "Visa",
+    },
+  },
+  {
+    img: {
+      src: "/img/company-logos/mastercard.png",
+      width: 45.77,
+      height: 27.4,
+      alt: "Mastercard",
+    },
+  },
+  {
+    img: {
+      src: "/img/company-logos/apple_pay.png",
+      width: 53.15,
+      height: 21.82,
+      alt: "Apple Pay",
+    },
+  },
+  {
+    img: {
+      src: "/img/company-logos/paypal.png",
+      width: 69.68,
+      height: 17.02,
+      alt: "Paypal",
+    },
+  },
+  {
+    img: {
+      src: "/img/company-logos/discover.png",
+      width: 65.89,
+      height: 17.86,
+      alt: "Discover",
+    },
+  },
+  {
+    img: {
+      src: "/img/company-logos/google_pay.png",
+      width: 55.37,
+      height: 22,
+      alt: "Google Pay",
+    },
   },
 ];

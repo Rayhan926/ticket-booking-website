@@ -46,6 +46,10 @@ html {
   .__input {
     @apply bg-[#F6F6F6] px-6 py-5 rounded border-none outline-none w-full;
   }
+
+  .__link {
+    @apply font-semibold text-primary underline hover:no-underline;
+  }
 }
 
 #we_have_section {

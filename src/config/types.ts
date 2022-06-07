@@ -145,6 +145,7 @@ export interface BookingFormLayoutProps {
   children: ReactNode;
   sidebar: ReactNode;
   title?: ReactNode;
+  sectionClass?: string;
 }
 
 export interface YourBookingInfoWidgetProps {
@@ -178,3 +179,7 @@ export interface BookWithConfidenceCard {
 export type RadioButtonProps = {
   type?: "radio";
 } & Omit<React.ComponentProps<"input">, "type">;
+
+export interface PaymentOption {
+  img: ImageProps;
+}
