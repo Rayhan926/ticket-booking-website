@@ -217,3 +217,11 @@ html {
   background-size: 2px 10px;
   background-repeat: repeat-y;
 }
+
+.country_select_wrapper .ReactFlagsSelect-module_flagsSelect__2pfa2 {
+  padding-bottom: 0 !important;
+}
+.country_select_wrapper .ReactFlagsSelect-module_selectBtn__19wW7 {
+  border: none !important;
+  @apply !py-[16px] bg-[#F6F6F6] !pr-[18px];
+}

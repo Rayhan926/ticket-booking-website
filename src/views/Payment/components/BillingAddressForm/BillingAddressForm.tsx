@@ -1,7 +1,9 @@
 import Input from "@components/Input";
-import React from "react";
+import React, { useState } from "react";
+import ReactFlagsSelect from "react-flags-select";
 
 const BillingAddressForm = () => {
+  const [selected, setSelected] = useState("");
   return (
     <div className="mt-9">
       <h1 className="title_md text-primary">Billing Address</h1>
@@ -17,7 +19,15 @@ const BillingAddressForm = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[30%,30%,auto] gap-6">
           <Input label="City" />
           <Input label="Zip Code" />
-          <Input label="Country" />
+          <div>
+            <p className="text-[13px] text-dark mb-1.5">Country</p>
+            <div className="country_select_wrapper">
+              <ReactFlagsSelect
+                selected={selected}
+                onSelect={(code) => setSelected(code)}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

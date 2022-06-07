@@ -183,3 +183,15 @@ export type RadioButtonProps = {
 export interface PaymentOption {
   img: ImageProps;
 }
+
+export interface FaqType {
+  title: ReactNode;
+  description: ReactNode;
+}
+
+export interface FaqCardProps {
+  isActiveFaq: boolean;
+  onChangehandler: (key: string) => void;
+  faq: FaqType;
+  faqKey: string;
+}
