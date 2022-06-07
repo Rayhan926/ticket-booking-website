@@ -42,6 +42,10 @@ html {
     box-shadow: 0 4px 16px rgb(129, 129, 129, 0.07);
     @apply rounded-[10px] bg-white;
   }
+
+  .__input {
+    @apply bg-[#F6F6F6] px-6 py-5 rounded border-none outline-none w-full;
+  }
 }
 
 #we_have_section {
@@ -180,17 +184,32 @@ html {
 }
 
 .phone_number_input_wrapper input {
-  @apply !pr-6 !pl-[95px] !py-5 !text-base !h-[69.98px] !bg-[#f6f6f6] !border-none !w-full;
+  @apply !pr-6 !pl-[105px] !py-5 !text-base !h-[69.98px] !bg-[#f6f6f6] !border-none !w-full;
 }
 
 .phone_number_input_wrapper .flag-dropdown {
-  @apply !h-[calc(100%-6px)] !top-1/2 !-translate-y-1/2 !left-[3px] !bg-white !border-none !px-5;
+  @apply !h-[calc(100%-6px)] !top-1/2 !-translate-y-1/2 !left-[3px] !bg-white !border-none !px-0;
 }
-
+.phone_number_input_wrapper .selected-flag {
+  padding: 0 !important;
+  width: 88px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+.phone_number_input_wrapper .selected-flag .flag {
+  margin-left: -12px !important;
+}
 .phone_number_input_wrapper .flag {
   @apply !scale-150;
 }
 
 .phone_number_input_wrapper .country-list {
   @apply !left-0;
+}
+
+.dasshed_border {
+  background-image: linear-gradient(#b9b9b9 33%, rgba(255, 255, 255, 0) 0%);
+  background-position: right;
+  background-size: 2px 10px;
+  background-repeat: repeat-y;
 }

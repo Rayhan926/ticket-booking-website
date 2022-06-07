@@ -144,7 +144,7 @@ export interface YourRideInfoProps {
 export interface BookingFormLayoutProps {
   children: ReactNode;
   sidebar: ReactNode;
-  title: ReactNode;
+  title?: ReactNode;
 }
 
 export interface YourBookingInfoWidgetProps {
@@ -174,3 +174,7 @@ export interface BookWithConfidenceCard {
   icon: ReactNode;
   description: ReactNode;
 }
+
+export type RadioButtonProps = {
+  type?: "radio";
+} & Omit<React.ComponentProps<"input">, "type">;
