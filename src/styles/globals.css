@@ -46,6 +46,9 @@ html {
   .__input {
     @apply bg-[#F6F6F6] px-6 py-5 rounded border-none outline-none w-full;
   }
+  .__signup_input {
+    @apply bg-transparent border border-[#727272] px-6 py-5 rounded-[13px] text-[17px] placeholder:text-[#5D698D] text-dark outline-none w-full;
+  }
 
   .__link {
     @apply font-semibold text-primary underline hover:no-underline;
@@ -224,4 +227,19 @@ html {
 .country_select_wrapper .ReactFlagsSelect-module_selectBtn__19wW7 {
   border: none !important;
   @apply !py-[16px] bg-[#F6F6F6] !pr-[18px];
+}
+
+.animation_fade_in {
+  animation: animation_fade_in 0.5s ease;
+}
+
+@keyframes animation_fade_in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

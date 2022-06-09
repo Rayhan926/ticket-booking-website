@@ -784,6 +784,8 @@ export const companyLogoSectionPageUrls = [
   "/details",
 ];
 
+export const disableFooterUrls = ["/signup"];
+
 export const bookWithConfidenceCards: BookWithConfidenceCard[] = [
   {
     icon: <BestPriceGuarantee />,
